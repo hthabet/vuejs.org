@@ -2,15 +2,15 @@
 type: api
 ---
 
-## Global Config
+## Configuration globale
 
-`Vue.config` is an object containing Vue's global configurations. You can modify its properties listed below before bootstrapping your application:
+`Vue.config` est un objet contenant les configurations globales de Vue. Vous pouvez modifier ses propriétés citées ci-dessous avant le lancement de votre application:
 
 ### debug
 
-- **Type:** `Boolean`
+- **Type:** `Booléen`
 
-- **Default:** `false`
+- **Prédéfini:** `false`
 
 - **Usage:**
 
@@ -18,49 +18,49 @@ type: api
   Vue.config.debug = true
   ```
 
-  When in debug mode, Vue will:
+  En mode débogage, Vue:
 
-  1. Print stack traces for all warnings.
+  1. affichera les traces d'appels pour tous les avertissements.
 
-  2. Make all anchor nodes visible in the DOM as Comment nodes. This makes it easier to inspect the structure of the rendered result.
+  2. Fera que tous les nœuds d'ancrage seront visibles dans le DOM sous forme de commentaire. Cela rend plus facile l'inspection de la structure du résultat rendu.
 
-  <p class="tip">Debug mode is only available in development build.</p>
+  <p class="tip">Le mode débogage est disponible uniquement dans le build de développement.</p>
 
 ### delimiters
 
-- **Type:** `Array<String>`
+- **Type:** `Tableau<Chaine>`
 
-- **Default:** `{% raw %}["{{", "}}"]{% endraw %}`
+- **Prédéfini:** `{% raw %}["{{", "}}"]{% endraw %}`
 
 - **Usage:**
 
   ``` js
-  // ES6 template string style
+  // modèle ES6 de chaine
   Vue.config.delimiters = ['${', '}']
   ```
 
-  Change the plain text interpolation delimiters.
+  Changer les délimiteurs d'interpolation du texte.
 
 ### unsafeDelimiters
 
-- **Type:** `Array<String>`
+- **Type:** `Tableau<Chaine>`
 
-- **Default:** `{% raw %}["{{{", "}}}"]{% endraw %}`
+- **Prédéfini:** `{% raw %}["{{{", "}}}"]{% endraw %}`
 
 - **Usage:**
 
   ``` js
-  // make it look more dangerous
+  // le faire paraître plus dangereux
   Vue.config.unsafeDelimiters = ['{!!', '!!}']
   ```
 
-  Change the raw HTML interpolation delimiters.
+  Changer les délimiteurs d'interpolation du HTML brut.
 
 ### silent
 
-- **Type:** `Boolean`
+- **Type:** `Booléen`
 
-- **Default:** `false`
+- **Prédéfini:** `false`
 
 - **Usage:**
 
@@ -68,13 +68,13 @@ type: api
   Vue.config.silent = true
   ```
 
-  Suppress all Vue.js logs and warnings.
+  Supprimer tous les journaux et les avertissements de Vue.js.
 
 ### async
 
-- **Type:** `Boolean`
+- **Type:** `Booléen`
 
-- **Default:** `true`
+- **Prédéfini:** `true`
 
 - **Usage:**
 
@@ -82,46 +82,46 @@ type: api
   Vue.config.async = false
   ```
 
-  When async mode is off, Vue will perform all DOM updates synchronously upon detecting data change. This may help with debugging in some scenarios, but could also cause degraded performance and affect the order in which watcher callbacks are called. **`async: false` is not recommended in production.**
+  Lorsque le mode async n'est pas actif, Vue effectuera toutes les mises à jour du DOM de manière synchrone dès la détection de changement de données. Cela peut faciliter le débogage dans certains scénarios, mais pourrait également provoquer une dégradation des performances et affecter l'ordre dans lequel les fonctions de retour d'observation sont appelées. **`async: false` n'est pas recommandé en production.**
 
 ### devtools
 
-- **Type:** `Boolean`
+- **Type:** `Booléen`
 
-- **Default:** `true` (`false` in production builds)
+- **Prédéfini:** `true` (`false` dans le build de production)
 
 - **Usage:**
 
   ``` js
-  // make sure to set this synchronously immediately after loading Vue
+  // assurez-vous de définir ceci de manière synchrone immédiatement après le chargement de Vue
   Vue.config.devtools = true
   ```
 
-  Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection. This option's default value is `true` in development builds and `false` in production builds. You can set it to `true` to enable inspection for production builds.
+  Permettre d'autoriser ou non l'inspection avec [vue-devtools] (https://github.com/vuejs/vue-devtools). La valeur par défaut de cette option est `true` dans le build de développement et `false` dans le build de production. Cela dit, vous avez la possibilité de le mettre à `true` pour permettre l'inspection en production.
 
-## Global API
+## API globale
 
 <h3 id="Vue-extend">Vue.extend( options )</h3>
 
 - **Arguments:**
-  - `{Object} options`
+  - `{Objet} options`
 
 - **Usage:**
 
-  Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
+  Créer une "sous-classe" du constructeur de base de Vue. L'argument doit être un objet contenant des options du composant.
 
-  The special cases to note here are `el` and `data` options - they must be functions when used with `Vue.extend()`.
+  Les cas particuliers à noter ici sont les propriétés `el` et` data` - Elles doivent être des fonctions lorsqu'elles sont utilisées avec `Vue.extend()`.
 
   ``` html
   <div id="mount-point"></div>
   ```
 
   ``` js
-  // create reusable constructor
+  // créer un contructeur réutilisable
   var Profile = Vue.extend({
     template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>'
   })
-  // create an instance of Profile
+  // créer une instance de profil
   var profile = new Profile({
     data: {
       firstName: 'Walter',
@@ -129,268 +129,268 @@ type: api
       alias: 'Heisenberg'
     }
   })
-  // mount it on an element
+  // attacher l'instance à un élement
   profile.$mount('#mount-point')
   ```
 
-  Will result in:
+  Le résultat sera:
 
   ``` html
   <p>Walter White aka Heisenberg</p>
   ```
 
-- **See also:** [Components](/guide/components.html)
+- **Voir aussi:** [Composants](/guide/components.html)
 
-<h3 id="Vue-nextTick">Vue.nextTick( callback )</h3>
+<h3 id="Vue-nextTick">Vue.nextTick( rappel )</h3>
 
 - **Arguments:**
-  - `{Function} callback`
+  - `{Fonction} rappel`
 
 - **Usage:**
 
-  Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update.
+  Différer le rappel à exécuter après le prochain cycle de mise à jour du DOM. Utilisez-le immédiatement après que vous ayez changé certaines données pour attendre la mise à jour du DOM.
 
   ``` js
-  // modify data
+  // modifier la donnée
   vm.msg = 'Hello'
-  // DOM not updated yet
+  // DOM pas encore mis à jour
   Vue.nextTick(function () {
-    // DOM updated
+    // DOM mis à jour
   })
   ```
 
-- **See also:** [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
+- **Voir aussi:** [File d'attente de mise à jour asynchrone](/guide/reactivity.html#Async-Update-Queue)
 
-<h3 id="Vue-set">Vue.set( object, key, value )</h3>
+<h3 id="Vue-set">Vue.set( objet, clé, valeur )</h3>
 
 - **Arguments:**
-  - `{Object} object`
-  - `{String} key`
-  - `{*} value`
+  - `{Objet} objet`
+  - `{Chaine} clé`
+  - `{*} valeur`
 
-- **Returns:** the set value.
+- **Retourne:** La valeur définie.
 
 - **Usage:**
 
-  Set a property on an object. If the object is reactive, ensure the property is created as a reactive property and trigger view updates. This is primarily used to get around the limitation that Vue cannot detect property additions.
+  Définir une propriété sur un objet. Si l'objet est réactif, assurer que la propriété soit créée comme une propriété réactive et déclenche des mises à jour de vue/interface. Ceci est principalement utilisé pour contourner la limitation de Vue, ce dernier ne détectant pas les ajouts de propriété.
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html)
+- **Voir aussi:** [Le concept de réactivité](/guide/reactivity.html)
 
-<h3 id="Vue-delete">Vue.delete( object, key )</h3>
+<h3 id="Vue-delete">Vue.delete( objet, clé )</h3>
 
 - **Arguments:**
-  - `{Object} object`
-  - `{String} key`
+  - `{Objet} objet`
+  - `{Chaine} clé`
 
 - **Usage:**
 
-  Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it.
+  Supprimer une propriété sur un objet. Si l'objet est réactif, assurer que la suppression déclenche des mises à jour de vue/interface. Ceci est principalement utilisé pour contourner la limitation de Vue, ce dernier ne détectant pas les suppressions de propriété, mais vous devriez rarement avoir besoin de l'utiliser.
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html)
+- **Voir aussi:** [Le concept de réactivité](/guide/reactivity.html)
 
 <h3 id="Vue-directive">Vue.directive( id, [definition] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{Function | Object} [definition]`
+  - `{Chaine} id`
+  - `{Fonction | Objet} [definition]`
 
 - **Usage:**
 
-  Register or retrieve a global directive.
+  Déclarer ou récupérer une directive globable
 
   ``` js
-  // register
+  // déclaration
   Vue.directive('my-directive', {
     bind: function () {},
     update: function () {},
     unbind: function () {}
   })
 
-  // register (simple function directive)
+  // déclaration (une fonction simple de directive)
   Vue.directive('my-directive', function () {
     // this will be called as `update`
   })
 
-  // getter, return the directive definition if registered
+  // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/custom-directive.html)
+- **Voir aussi:** [Directives personnalisées](/guide/custom-directive.html)
 
 <h3 id="Vue-elementDirective">Vue.elementDirective( id, [definition] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{Object} [definition]`
+  - `{Chaine} id`
+  - `{Objet} [definition]`
 
 - **Usage:**
 
-  Register or retrieve a global element directive.
+  Déclarer or récupérer une directive d'élément global.
 
   ``` js
-  // register
+  // déclaration
   Vue.elementDirective('my-element', {
     bind: function () {},
-    // element directives do not use `update`
+    // les directives d'élément ne possède pas de `update`
     unbind: function () {}
   })
 
-  // getter, return the directive definition if registered
+  // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
   var myDirective = Vue.elementDirective('my-element')
   ```
 
-- **See also:** [Element Directives](/guide/custom-directive.html#Element-Directives)
+- **Voir aussi:** [Directives d'Elément](/guide/custom-directive.html#Element-Directives)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{Function | Object} [definition]`
+  - `{Chaine} id`
+  - `{Fonction | Objet} [definition]`
 
 - **Usage:**
 
-  Register or retrieve a global filter.
+  Déclarer or récupérer un filtre global.
 
   ``` js
-  // register
+  // déclaration
   Vue.filter('my-filter', function (value) {
-    // return processed value
+    // retour la valeur traitée
   })
 
-  // two way filter
+  // filtre en lecture/écriture (two-way)
   Vue.filter('my-filter', {
     read: function () {},
     write: function () {}
   })
 
-  // getter, return the filter if registered
+  // récupération, retourne le filtre si celui ci est préalablement déclaré
   var myFilter = Vue.filter('my-filter')
   ```
 
-- **See also:** [Custom Filter](/guide/custom-filter.html)
+- **Voir aussi:** [Filtre personnalisé](/guide/custom-filter.html)
 
 <h3 id="Vue-component">Vue.component( id, [definition] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{Function | Object} [definition]`
+  - `{Chaine} id`
+  - `{Fonction | Objet} [definition]`
 
 - **Usage:**
 
-  Register or retrieve a global component.
+  Déclarer or récupérer un composant global.
 
   ``` js
-  // register an extended constructor
+  // déclarer un constructeur étendu
   Vue.component('my-component', Vue.extend({ /* ... */ }))
 
-  // register an options object (automatically call Vue.extend)
+  // déclarer un objet d'options (appelle automatiquement Vue.extend)
   Vue.component('my-component', { /* ... */ })
 
-  // retrieve a registered component (always return constructor)
+  // récupérer un composant déclaré (retourne toujours le constructeur)
   var MyComponent = Vue.component('my-component')
   ```
 
-- **See also:** [Components](/guide/components.html).
+- **Voir aussi:** [Composants](/guide/components.html).
 
 <h3 id="Vue-transition">Vue.transition( id, [hooks] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{Object} [hooks]`
+  - `{Chaine} id`
+  - `{Objet} [hooks]`
 
 - **Usage:**
 
-  Register or retrieve a global transition hooks object.
+  Déclarer or récupérer un objet de hooks de transition globale.
 
   ``` js
-  // register
+  // déclaration
   Vue.transition('fade', {
     enter: function () {},
     leave: function () {}
   })
 
-  // retrieve registered hooks
+  // récupération de hooks déclarés
   var fadeTransition = Vue.transition('fade')
   ```
 
-- **See also:** [Transitions](/guide/transitions.html).
+- **Voir aussi:** [Transitions](/guide/transitions.html).
 
 <h3 id="Vue-partial">Vue.partial( id, [partial] )</h3>
 
 - **Arguments:**
-  - `{String} id`
-  - `{String} [partial]`
+  - `{Chaine} id`
+  - `{Chaine} [partial]`
 
 - **Usage:**
 
-  Register or retrieve a global template partial string.
+  Déclarer or récupérer un modèle global de fragment de chaine.
 
   ``` js
-  // register
+  // déclaration
   Vue.partial('my-partial', '<div>Hi</div>')
 
-  // retrieve registered partial
+  // récupération du fragment de chaine déclaré
   var myPartial = Vue.partial('my-partial')
   ```
 
-- **See also:** [Special Elements - &lt;partial&gt;](#partial).
+- **Voir aussi:** [Elements spéciaux - &lt;partial&gt;](#partial).
 
 <h3 id="Vue-use">Vue.use( plugin, [options] )</h3>
 
 - **Arguments:**
-  - `{Object | Function} plugin`
-  - `{Object} [options]`
+  - `{Objet | Fonction} plugin`
+  - `{Objet} [options]`
 
 - **Usage:**
 
-  Install a Vue.js plugin. If the plugin is an Object, it must expose an `install` method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument.
+  Installer un plugin Vue.js. Si le plugin est un objet, il doit avoir une méthode `install`. Si il est lui-même une fonction, il sera traité comme la méthode `install. La méthode `install` sera appelée avec Vue comme argument.
 
-- **See also:** [Plugins](/guide/plugins.html).
+- **Voir aussi:** [Plugins](/guide/plugins.html).
 
 <h3 id="Vue-mixin">Vue.mixin( mixin )</h3>
 
 - **Arguments:**
-  - `{Object} mixin`
+  - `{Objet} mixin`
 
 - **Usage:**
 
-  Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
+  Appliquer une mixin globalement. Cela affecte toutes les instances Vue précédemment créées. Cela peut être utilisé par les auteurs du plugin pour injecter un comportement personnalisé dans les composants. **Pas recommandé dans le code d'application**.
 
-- **See also:** [Global Mixins](/guide/mixins.html#Global-Mixin)
+- **Voir aussi:** [Mixins Globales](/guide/mixins.html#Global-Mixin)
 
 ## Options / Data
 
 ### data
 
-- **Type:** `Object | Function`
+- **Type:** `Objet | Fonction`
 
-- **Restriction:** Only accepts `Function` when used in a component definition.
+- **Restriction:** accepte seulement `Fonction` lorsqu'il est utilisé dans une définition de composant.
 
-- **Details:**
+- **Détails:**
 
-  The data object for the Vue instance. Vue.js will recursively convert its properties into getter/setters to make it "reactive". **The object must be plain**: native objects, existing getter/setters and prototype properties are ignored. It is not recommended to observe complex objects.
+  L'objet de données pour l'instance de Vue. Vue.js va récursivement convertir ses propriétés en "getter" / "setters" pour le rendre «réactif». **L'objet doit être simple**: objets natifs, getter / setters existants et les propriétés de prototype sont ignorés. Il est recommandé de ne pas observer des objets complexes.
 
-  Once the instance is created, the original data object can be accessed as `vm.$data`. The Vue instance also proxies all the properties found on the data object.
+  Une fois que l'instance est créée, l'objet de données d'origine est accessible avec `vm.$data`. L'instance de Vue permet également l'accès direct à toutes les propriétés figurant sur l'objet de données.
 
-  Properties that start with `_` or `$` will **not** be proxied on the Vue instance because they may conflict with Vue's internal properties and API methods. You will have to access them as `vm.$data._property`.
+  Les propriétés prefixées par `_` ou `$` **ne seront pas** accessibles directement depuis l'instance de Vue parce qu'ils peuvent entrer en conflit avec les propriétés internes de Vue et les méthodes de l'API. Vous devez y accéder avec `vm.$data._property`.
 
-  When defining a **component**, `data` must be declared as a function that returns the initial data object, because there will be many instances created using the same definition. If we still use a plain object for `data`, that same object will be **shared by reference** across all instance created! By providing a `data` function, every time a new instance is created, we can simply call it to return a fresh copy of the initial data.
+  Lors de la définition d'un **composant**, `data` doit être déclarée comme une fonction qui renvoie l'objet initial de données, car il y aura de nombreuses instances créées en utilisant la même définition. Si nous utilisons encore un objet clair pour `data`, ce même objet sera **partagé par référence** avec toutes les instances créées! En fournissant `data` comme une fonction, chaque fois qu'une nouvelle instance est créée, nous pouvons simplement appeler cette fonction pour retourner une nouvelle copie des données initiales.
 
-  If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
+  Si nécessaire, un clonage en profondeur de l'objet original peut être obtenu en appliquant `JSON.parse(JSON.stringify(...))` sur `vm.$data`.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var data = { a: 1 }
 
-  // direct instance creation
+  // créaction directe d'instance
   var vm = new Vue({
     data: data
   })
   vm.a // -> 1
   vm.$data === data // -> true
 
-  // must use function when in Vue.extend()
+  // on doit utiliser function à l'intérieur de Vue.extend()
   var Component = Vue.extend({
     data: function () {
       return { a: 1 }
@@ -398,7 +398,7 @@ type: api
   })
   ```
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html).
+- **Voir aussi:** [Le concept de réactivité](/guide/reactivity.html).
 
 ### props
 
