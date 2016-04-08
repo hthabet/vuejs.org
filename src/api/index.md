@@ -10,7 +10,7 @@ type: api
 
 - **Type:** `Booléen`
 
-- **Prédéfini:** `false`
+- **Par défaut:** `false`
 
 - **Usage:**
 
@@ -30,7 +30,7 @@ type: api
 
 - **Type:** `Tableau<Chaine>`
 
-- **Prédéfini:** `{% raw %}["{{", "}}"]{% endraw %}`
+- **Par défaut:** `{% raw %}["{{", "}}"]{% endraw %}`
 
 - **Usage:**
 
@@ -45,7 +45,7 @@ type: api
 
 - **Type:** `Tableau<Chaine>`
 
-- **Prédéfini:** `{% raw %}["{{{", "}}}"]{% endraw %}`
+- **Par défaut:** `{% raw %}["{{{", "}}}"]{% endraw %}`
 
 - **Usage:**
 
@@ -60,7 +60,7 @@ type: api
 
 - **Type:** `Booléen`
 
-- **Prédéfini:** `false`
+- **Par défaut:** `false`
 
 - **Usage:**
 
@@ -74,7 +74,7 @@ type: api
 
 - **Type:** `Booléen`
 
-- **Prédéfini:** `true`
+- **Par défaut:** `true`
 
 - **Usage:**
 
@@ -88,7 +88,7 @@ type: api
 
 - **Type:** `Booléen`
 
-- **Prédéfini:** `true` (`false` dans le build de production)
+- **Par défaut:** `true` (`false` dans le build de production)
 
 - **Usage:**
 
@@ -97,7 +97,7 @@ type: api
   Vue.config.devtools = true
   ```
 
-  Permettre d'autoriser ou non l'inspection avec [vue-devtools] (https://github.com/vuejs/vue-devtools). La valeur par défaut de cette option est `true` dans le build de développement et `false` dans le build de production. Cela dit, vous avez la possibilité de le mettre à `true` pour permettre l'inspection en production.
+  Permettre d'autoriser ou non l'inspection avec [vue-devtools](https://github.com/vuejs/vue-devtools). La valeur par défaut de cette option est `true` dans le build de développement et `false` dans le build de production. Cela dit, vous avez la possibilité de le mettre à `true` pour permettre l'inspection en production.
 
 ## API globale
 
@@ -239,7 +239,7 @@ type: api
   var myDirective = Vue.elementDirective('my-element')
   ```
 
-- **Voir aussi:** [Directives d'Elément](/guide/custom-directive.html#Element-Directives)
+- **Voir aussi:** [Directives d'Élément](/guide/custom-directive.html#Element-Directives)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
@@ -267,7 +267,7 @@ type: api
   var myFilter = Vue.filter('my-filter')
   ```
 
-- **Voir aussi:** [Filtre personnalisé](/guide/custom-filter.html)
+- **Voir aussi:** [Filtres personnalisés](/guide/custom-filter.html)
 
 <h3 id="Vue-component">Vue.component( id, [definition] )</h3>
 
@@ -323,7 +323,7 @@ type: api
 
 - **Usage:**
 
-  Déclarer or récupérer un modèle global de fragment de chaine.
+  Déclarer or récupérer un modèle global de chaine partielle.
 
   ``` js
   // déclaration
@@ -533,13 +533,13 @@ type: api
 
 ### el
 
-- **Type:** `Chaine | ElémentHTML | Fonction`
+- **Type:** `Chaine | ÉlémentHTML | Fonction`
 
 - **Restriction:** accepte uniquement le type `Fonction` lorsque c'est utilisé dans une définition de composant.
 
 - **Détails:**
 
-  Fournit à l'instance de Vue un élément DOM existant auquel elle sera rattachée. Il peut être une chaîne de sélecteur CSS, un ElémentHTML, ou une fonction qui retourne un ElémentHTML. Notez que l'élément fourni ne sert que de point de rattachement; il sera remplacé si un `template` est également fourni, à moins que `replace` est définie sur `false`. L'élément résolu sera accessible comme `vm.$el`.
+  Fournit à l'instance de Vue un élément DOM existant auquel elle sera rattachée. Il peut être une chaîne de sélecteur CSS, un ÉlémentHTML, ou une fonction qui retourne un ÉlémentHTML. Notez que l'élément fourni ne sert que de point de rattachement; il sera remplacé si un `template` est également fourni, à moins que `replace` est définie sur `false`. L'élément résolu sera accessible comme `vm.$el`.
 
   Lorsque `el` est utilisé dans `Vue.extend`, une fonction doit être fournie de sorte que chaque instance obtienne un élément créé séparément.
 
@@ -568,7 +568,7 @@ type: api
 
 - **Type:** `Booléen`
 
-- **Prédéfini:** `true`
+- **Par défaut:** `true`
 
 - **Restriction:** appliqué seulement si l'option **template** est également présente.
 
@@ -625,7 +625,7 @@ type: api
 
 - **Détails:**
 
-  Appelé de manière synchrone après l'initialisation de l'instance mais avant l'observation des données et configuration des événements/observateurs.
+  Appelée de manière synchrone après l'initialisation de l'instance mais avant l'observation des données et configuration des événements/observateurs.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -635,7 +635,7 @@ type: api
 
 - **Détails:**
 
-  Appelé de manière synchrone après la création de l'instance. A ce stade, l'instance a fini de traiter les options, ce qui signifie ce qui suit a été mis en place: l'observation des données, les propriétés calculées, les méthodes, les fonctions de rappel d'observation et d'événement. Cependant, la compilation du DOM ne serait pas encore démarrée et la propriété `$el` ne sera pas disponible pour l'instant.
+  Appelée de manière synchrone après la création de l'instance. A ce stade, l'instance a fini de traiter les options, ce qui signifie ce qui suit a été mis en place: l'observation des données, les propriétés calculées, les méthodes, les fonctions de rappel d'observation et d'événement. Cependant, la compilation du DOM ne serait pas encore démarrée et la propriété `$el` ne sera pas disponible pour l'instant.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -645,7 +645,7 @@ type: api
 
 - **Détails:**
 
-  Appelé juste avant que la compilation ne démarre.
+  Appelée juste avant que la compilation ne démarre.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -655,7 +655,7 @@ type: api
 
 - **Détails:**
 
-  Appelé après que la compilation ne soit terminée. A ce stade, toutes les directives ont été liées afin que les modifications de données puissent déclencher des mises à jour du DOM. Cependant, Il n'est pas garanti que `$el`ne soit inséré dans le document.
+  Appelée après que la compilation ne soit terminée. A ce stade, toutes les directives ont été liées afin que les modifications de données puissent déclencher des mises à jour du DOM. Cependant, Il n'est pas garanti que `$el`ne soit inséré dans le document.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -665,7 +665,7 @@ type: api
 
 - **Détails:**
 
-  Called after compilation **and** the `$el` is **inserted into the document for the first time**, i.e. right after the first `attached` hook. Note this insertion must be executed via Vue (with methods like `vm.$appendTo()` or as a result of a directive update) to trigger the `ready` hook.
+  Appelée après la compilation **et** après que `$el` est **inséré dans le document pour la première fois**, à savoir juste après le premier hook `attached`. Notez que cette insertion doit être exécutée via Vue (avec des méthodes comme `vm.$AppendTo()` ou à la suite d'une mise à jour de la directive) pour déclencher le hook `ready`.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -675,7 +675,7 @@ type: api
 
 - **Détails:**
 
-  Called when `vm.$el` is attached to DOM by a directive or a VM instance method such as `$appendTo()`. Direct manipulation of `vm.$el` will **not** trigger this hook.
+  Appelée lorsque `vm.$el` est attaché au DOM par une directive ou par une méthode d'instance VM comme `$appendTo()`. La manipulation directe de `vm.$el`  **ne déclenchera pas** ce hook.
 
 ### detached
 
@@ -683,7 +683,7 @@ type: api
 
 - **Détails:**
 
-  Called when `vm.$el` is removed from the DOM by a directive or a VM instance method. Direct manipulation of `vm.$el` will **not** trigger this hook.
+  Appelée lorsque `vm.$el` est retiré du DOM par une directive ou d'une méthode d'instance VM. La manipulation directe de `vm.$el` **ne déclenchera pas** ce hook.
 
 ### beforeDestroy
 
@@ -691,7 +691,7 @@ type: api
 
 - **Détails:**
 
-  Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.
+  Appelée juste avant qu'une instance de Vue est détruite. A ce stade, l'instance est encore pleinement fonctionnelle.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -701,9 +701,9 @@ type: api
 
 - **Détails:**
 
-  Called after a Vue instance has been destroyed. When this hook is called, all bindings and directives of the Vue instance have been unbound and all child Vue instances have also been destroyed.
+  Appelée après qu'une instance de Vue a été détruite. Lorsque ce hook est exécuté, toutes les liaisons et les directives de l'instance de Vue sont dissociées et toutes les instances de Vue de l'enfant sont également détruites.
 
-  Note if there is a leaving transition, the `destroyed` hook is called **after** the transition has finished.
+  Notez que s'il y a une transition en cours (transition de sortie), le hook `destroyed` est exécuté **après** que la transition ne soit terminée.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -711,94 +711,94 @@ type: api
 
 ### directives
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of directives to be made available to the Vue instance.
+  Une liste de directives disponibles pour l'instance de Vue.
 
 - **Voir aussi:**
-  - [Custom Directives](/guide/custom-directive.html)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
+  - [Directives personnalisées](/guide/custom-directive.html)
+  - [Convention de nommage des assets](/guide/components.html#Assets-Naming-Convention)
 
 ### elementDirectives
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of element directives to be made available to the Vue instance.
+  Une liste de directives d'élement disponibles pour l'instance de Vue.
 
 - **Voir aussi:**
-  - [Element Directives](/guide/custom-directive.html#Element-Directives)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
+  - [Directives d'Élément](/guide/custom-directive.html#Element-Directives)
+  - [Convention de nommage des assets](/guide/components.html#Assets-Naming-Convention)
 
 ### filters
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of filters to be made available to the Vue instance.
+  Une liste de filtres disponibles pour l'instance de Vue.
 
 - **Voir aussi:**
-  - [Custom Filters](/guide/custom-filter.html)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
+  - [Filtres personnalisés](/guide/custom-filter.html)
+  - [Convention de nommage des assets](/guide/components.html#Assets-Naming-Convention)
 
 ### components
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of components to be made available to the Vue instance.
+  Une liste de composants disponibles pour l'instance de Vue.
 
 - **Voir aussi:**
-  - [Components](/guide/components.html)
+  - [Composants](/guide/components.html)
 
 ### transitions
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of transitions to be made available to the Vue instance.
+  Une liste de transitions disponibles pour l'instance de Vue.
 
 - **Voir aussi:**
   - [Transitions](/guide/transitions.html)
 
 ### partials
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  A hash of partial strings to be made available to the Vue instance.
+  Une liste de chaines partielles (HTML/texte) pour l'instance de Vue.
 
 - **Voir aussi:**
-  - [Special Elements - partial](#partial)
+  - [Éléments Spéciaux - partial](#partial)
 
 ## Options / Misc
 
 ### parent
 
-- **Type:** `Vue instance`
+- **Type:** `Instance de Vue`
 
 - **Détails:**
 
-  Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent's `$children` array.
+  Spécifie l'instance de parent pour l'instance à créer. Établit une relation parent-enfant entre les deux. Le parent sera accessible avec `this.$parent` pour l'enfant, et l'enfant sera ajouté au tableau `$children` du parent.
 
-- **Voir aussi:** [Parent-Child Communication](/guide/components.html#Parent-Child-Communication)
+- **Voir aussi:** [Communication parent-enfant](/guide/components.html#Parent-Child-Communication)
 
 ### events
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  An object where keys are events to listen for and values are the corresponding callbacks. Note these are Vue events rather than DOM events. The value can also be a string of a method name. The Vue instance will call `$on()` for each entry in the object at instantiation.
+  Un objet où les clés sont des événements à écouter et les valeurs sont les fonctions de rappel correspondantes. Notez que ce sont des événements Vue plutôt que des événements DOM. La valeur peut aussi être le nom d'une méthode. À l'instanciation, l'instance de Vue appellera `$on()` pour chaque entrée dans l'objet.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var vm = new Vue({
@@ -809,7 +809,7 @@ type: api
       greeting: function (msg) {
         console.log(msg)
       },
-      // can also use a string for methods
+      // La valeur peut aussi être le nom d'une méthode
       bye: 'sayGoodbye'
     },
     methods: {
@@ -823,20 +823,20 @@ type: api
   ```
 
 - **Voir aussi:**
-  - [Instance Methods - Events](#Instance-Methods-Events)
-  - [Parent-Child Communication](/guide/components.html#Parent-Child-Communication)
+  - [Méthodes d'instance - Évènements](#Instance-Methods-Events)
+  - [Communication parent-enfant](/guide/components.html#Parent-Child-Communication)
 
 ### mixins
 
-- **Type:** `Array`
+- **Type:** `Tableau`
 
 - **Détails:**
 
-  The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options just like normal instance objects, and they will be merged against the eventual options using the same option merging logic in `Vue.extend()`. e.g. If your mixin contains a created hook and the component itself also has one, both functions will be called.
+  L'option `mixins` accepte un tableau d'objets mixins. Ces objets peuvent contenir des options d'instance, tout comme chaque objet d'instance de Vue, et ils seront fusionnés avec ces options en utilisant la même logique dans `Vue.extend()`. par exemple. Si votre mixin contient un hook `created` et le composant lui-même en a aussi un, les deux fonctions seront appelées.
 
-  Mixin hooks are called in the order they are provided, and called before the component's own hooks.
+  Les hooks de Mixin sont appelés dans l'ordre dans lequel ils sont fournis, et sont appelés avant les hooks du composant.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var mixin = {
@@ -854,64 +854,64 @@ type: api
 
 ### name
 
-- **Type:** `String`
+- **Type:** `Chaine`
 
-- **Restriction:** only respected when used in `Vue.extend()`.
+- **Restriction:** appliqué seulement si c'est utilisé à l'intérieur de `Vue.extend()`.
 
 - **Détails:**
 
-  Allow the component to recursively invoke itself in its template. Note that when a component is registered globally with `Vue.component()`, the global ID is automatically set as its name.
+  Permet au composant de s'invoquer récusirvement dans son modèle. Notez que lorsqu'un composant est déclaré au niveau global avec `Vue.component()`, l'identifiant global est automatiquement défini comme son nom.
 
-  Another benefit of specifying a `name` option is console inspection. When inspecting an extended Vue component in the console, the default constructor name is `VueComponent`, which isn't very informative. By passing in an optional `name` option to `Vue.extend()`, you will get a better inspection output so that you know which component you are looking at. The string will be camelized and used as the component's constructor name.
+  Un autre avantage de spécifier une option `name` est l'inspection de la console. Lors de l'inspection d'un composant étendu de Vue dans la console, le nom du constructeur par défaut est `VueComponent`, ce qui n'est pas très significatif. En définissant l'option `name` (option facultative) dans `Vue.extend()`, vous obtiendrez un meilleur retour d'inspection afin que vous sachiez quel composant vous observez. La chaîne sera en "camelCase" et sera utilisé comme le nom du constructeur du composant.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var Ctor = Vue.extend({
     name: 'stack-overflow',
     template:
       '<div>' +
-        // recursively invoke self
+        // s'invoque de manière récursive
         '<stack-overflow></stack-overflow>' +
       '</div>'
   })
 
-  // this will actually result in a max stack size exceeded
-  // error, but let's assume it works...
+  // ceci entrainera une erreur - dépassement de la taille maximale de la pile
+  // mais supposons que ça fonctionne ...
   var vm = new Ctor()
 
   console.log(vm) // -> StackOverflow {$el: null, ...}
   ```
 
-## Instance Properties
+## Propriété d'instance
 
 ### vm.$data
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
 - **Détails:**
 
-  The data object that the Vue instance is observing. You can swap it with a new object. The Vue instance proxies access to the properties on its data object.
+  C'est l'objet de données observé par l'instance de Vue. Vous pouvez l'échanger avec un nouvel objet. L'instance Vue redirecte l'accès aux propriétés sur son objet de données.
 
 ### vm.$el
 
-- **Type:** `HTMLElement`
+- **Type:** `ÉlémentHTML`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  The DOM element that the Vue instance is managing. Note that for [Fragment Instances](/guide/components.html#Fragment-Instance), `vm.$el` will return an anchor node that indicates the starting position of the fragment.
+  C'est l'élément DOM géré par l'instance de Vue. Notez que pour [Fragment d'instance](/guide/components.html#Fragment-Instance), `vm.$el` retournera un noeud d'ancrage qui indique la position de départ du fragment.
 
 ### vm.$options
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  The instantiation options used for the current Vue instance. This is useful when you want to include custom properties in the options:
+  C'est les options d'instanciation utilisées pour l'instance de Vue actuelle. Ceci est utile lorsque vous souhaitez inclure des propriétés personnalisées dans les options:
 
   ``` js
   new Vue({
@@ -924,104 +924,104 @@ type: api
 
 ### vm.$parent
 
-- **Type:** `Vue instance`
+- **Type:** `Instance de Vue`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  The parent instance, if the current instance has one.
+  C'est l'instance parente. si l'instance actuelle en a une.
 
 ### vm.$root
 
-- **Type:** `Vue instance`
+- **Type:** `Instance de Vue`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  The root Vue instance of the current component tree. If the current instance has no parents this value will be itself.
+  C'est l'instance de Vue racine de l'arborescence du composant actuel. Si l'instance actuelle n'a pas de parents, cette valeur sera l'instance elle-même.
 
 ### vm.$children
 
 - **Type:** `Array<Vue instance>`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  The direct child components of the current instance.
+  C'est le composant enfant direct de l'instance actuelle.
 
 ### vm.$refs
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  An object that holds child components that have `v-ref` registered.
+  Un objet qui contient les composants enfants qui ont `v-ref` déclaré.
 
 - **Voir aussi:**
-  - [Child Component Refs](/guide/components.html#Child-Component-Refs)
+  - [Références du composant enfant](/guide/components.html#Child-Component-Refs)
   - [v-ref](#v-ref).
 
 ### vm.$els
 
-- **Type:** `Object`
+- **Type:** `Objet`
 
-- **Read only**
+- **Lecture seule**
 
 - **Détails:**
 
-  An object that holds DOM elements that have `v-el` registered.
+  Un objet qui contient les éléments DOM qui ont `v-el` déclaré.
 
 - **Voir aussi:** [v-el](#v-el).
 
-## Instance Methods / Data
+## Méthodes d'instance / Données
 
 <h3 id="vm-watch">vm.$watch( expOrFn, callback, [options] )</h3>
 
 - **Arguments:**
-  - `{String | Function} expOrFn`
-  - `{Function} callback`
-  - `{Object} [options]`
-    - `{Boolean} deep`
-    - `{Boolean} immediate`
+  - `{Chaine | Fonction} expOrFn`
+  - `{Fonction} callback`
+  - `{Objet} [options]`
+    - `{Booléen} deep`
+    - `{Booléen} immediate`
 
-- **Returns:** `{Function} unwatch`
+- **Retourne:** `{Fonction} unwatch`
 
 - **Usage:**
 
-  Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression can be a single keypath or any valid binding expressions.
+  Observe les changements sur une expression ou une fonction calculée dans l'instance de Vue. La fonction de rappel est appelée avec la nouvelle valeur et l'ancienne valeur. L'expression peut être un seul chemin de clé (keypath) (`clé.clé.clé`) ou d'expressions de liaison valides.
 
-<p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
+<p class="tip">Remarque: lors de la mutation d'un objet ou d'un tableau, l'ancienne valeur sera la même que la nouvelle valeur parce qu'elles font référence au même objet/tableau. Vue ne conserve pas de copie de la valeur pré-muter.</p>
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   // keypath
   vm.$watch('a.b.c', function (newVal, oldVal) {
-    // do something
+    // traitement
   })
 
   // expression
   vm.$watch('a + b', function (newVal, oldVal) {
-    // do something
+    // traitement
   })
 
-  // function
+  // fonction
   vm.$watch(
     function () {
       return this.a + this.b
     },
     function (newVal, oldVal) {
-      // do something
+      // traitement
     }
   )
   ```
 
-  `vm.$watch` returns an unwatch function that stops firing the callback:
+  `vm.$watch` retourne une fonction `unwatch` qui arrête le déclenchement de la fonction du rappel:
 
   ``` js
   var unwatch = vm.$watch('a', cb)
@@ -1031,37 +1031,37 @@ type: api
 
 - **Option: deep**
 
-  To also detect nested value changes inside Objects, you need to pass in `deep: true` in the options argument. Note that you don't need to do so to listen for Array mutations.
+  Pour détecter également des changements des valeurs imbriquées à l'intérieur des objets, vous devez déclarer `deep: true` dans l'argument `options`. Notez que vous n'avez pas besoin de le faire pour écouter les mutations de tableau.
 
   ``` js
   vm.$watch('someObject', callback, {
     deep: true
   })
   vm.someObject.nestedValue = 123
-  // callback is fired
+  // la fonction de rappel est déclenchée
   ```
 
 - **Option: immediate**
 
-  Passing in `immediate: true` in the option will trigger the callback immediately with the current value of the expression:
+  En déclarant `immediate: true` dans l'option déclenchera la fonction de rappel immédiatement avec la valeur actuelle de l'expression:
 
   ``` js
   vm.$watch('a', callback, {
     immediate: true
   })
-  // callback is fired immediately with current value of `a`
+  // la fonction de rappel est déclenché immédiatement avec la valeur actuelle `a`
   ```
 
 <h3 id="vm-get">vm.$get( expression )</h3>
 
 - **Arguments:**
-  - `{String} expression`
+  - `{Chaine} expression`
 
 - **Usage:**
 
-  Retrieve a value from the Vue instance given an expression. Expressions that throw errors will be suppressed and return `undefined`.
+  Récupére une valeur de l'instance de Vue via une expression. Les expressions qui génèrent des erreurs seront supprimées et la valeur retournée sera `undefined`.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var vm = new Vue({
@@ -1078,20 +1078,20 @@ type: api
 <h3 id="vm-set">vm.$set( keypath, value )</h3>
 
 - **Arguments:**
-  - `{String} keypath`
+  - `{Chaine} keypath`
   - `{*} value`
 
 - **Usage:**
 
-  Set a data value on the Vue instance given a valid keypath. In most cases you should prefer setting properties using plain object syntax, e.g. `vm.a.b = 123`. This method is only needed in two scenarios:
+  Définit une valeur de données sur l'instance de Vue suivant un chemin de clés valide. Dans la plupart des cas, Il est préférable de définir des propriétés en utilisant la syntaxe de l'objet brut, par exemple `vm.a.b = 123`. Cette méthode est nécessaire uniquement dans deux scénarios:
 
-  1. When you have a keypath string and want to dynamically set the value using that keypath.
+  1. Lorsque vous avez un chemin de clés et que vous voulez définir dynamiquement la valeur à l'aide de ce chemin.
 
-  2. When you want to set a property that doesn't exist.
+  2. Lorsque vous souhaitez définir une propriété qui n'existe pas.
 
-  If the path doesn't exist it will be recursively created and made reactive. If a new root-level reactive property is created due to a `$set` call, the Vue instance will be forced into a "digest cycle", during which all its watchers are re-evaluated.
+  Si le chemin n'existe pas, il sera créer de manière récursive et sera réactif. Si une nouvelle propriété réactive est créée au niveau racine par la méthode `$set`, l'instance de Vue sera forcée dans un «cycle de digestion», au cours duquel tous ses observateurs sont réévalués.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var vm = new Vue({
@@ -1102,85 +1102,85 @@ type: api
     }
   })
 
-  // set an existing path
+  // definir un chemin de clé/propriété existante
   vm.$set('a.b', 2)
   vm.a.b // -> 2
 
-  // set a non-existent path, will force digest
+  // définir un chemin inexistant, forcera l'exécution du cycle de digestion
   vm.$set('c', 3)
   vm.c // ->
   ```
 
-- **Voir aussi:** [Reactivity in Depth](/guide/reactivity.html)
+- **Voir aussi:** [Le concept de réactivité](/guide/reactivity.html)
 
 <h3 id="vm-delete">vm.$delete( key )</h3>
 
 - **Arguments:**
-  - `{String} key`
+  - `{Chaine} key`
 
 - **Usage:**
 
-  Delete a root level property on the Vue instance (and also its `$data`). Forces a digest cycle. Not recommended.
+  Supprime une propriété situé au niveau racine sur l'instance de Vue (et aussi sa propriété `$data`). Force un cycle de digestion. Non recommandé.
 
 <h3 id="vm-eval">vm.$eval( expression )</h3>
 
 - **Arguments:**
-  - `{String} expression`
+  - `{Chaine} expression`
 
 - **Usage:**
 
-  Evaluate a valid binding expression on the current instance. The expression can also contain filters.
+  Évalue une expression de liaison (binding expression) valide sur l'instance en cours. L'expression peut également contenir des filtres.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
-  // assuming vm.msg = 'hello'
+  // supposant que vm.msg = 'hello'
   vm.$eval('msg | uppercase') // -> 'HELLO'
   ```
 
 <h3 id="vm-interpolate">vm.$interpolate( templateString )</h3>
 
 - **Arguments:**
-  - `{String} templateString`
+  - `{Chaine} templateString`
 
 - **Usage:**
 
-  Evaluate a piece of template string containing mustache interpolations. Note that this method simply performs string interpolation; attribute directives are ignored.
+  Évalue un partie de modèle contenant des interpolations `{{...}})`. Notez que cette méthode effectue simplement l'interpolation de chaîne; les directives d'attribut sont ignorées.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
-  // assuming vm.msg = 'hello'
+  // supposant que vm.msg = 'hello'
   vm.$interpolate('{{msg}} world!') // -> 'hello world!'
   ```
 
 <h3 id="vm-log">vm.$log( [keypath] )</h3>
 
 - **Arguments:**
-  - `{String} [keypath]`
+  - `{Chaine} [keypath]`
 
 - **Usage:**
 
-  Log the current instance data as a plain object, which is more inspection-friendly than a bunch of getter/setters. Also accepts an optional key.
+Enregistre les données de l'instance actuelle comme un objet simple, cela est plus efficace à l'inspection qu'un ensemble de getter/setters. Cette fonction accepte également un paramètre `keypath` facultatif.
 
   ``` js
   vm.$log() // logs entire ViewModel data
   vm.$log('item') // logs vm.item
   ```
 
-## Instance Methods / Events
+## Méthodes d'instance / Évènements
 
 <h3 id="vm-on">vm.$on( event, callback )</h3>
 
 - **Arguments:**
-  - `{String} event`
-  - `{Function} callback`
+  - `{Chaine} event`
+  - `{Fonction} callback`
 
 - **Usage:**
 
-  Listen for a custom event on the current vm. Events can be triggered by `vm.$emit`, `vm.$dispatch` or `vm.$broadcast`. The callback will receive all the additional arguments passed into these event-triggering methods.
+  Écoute un événement personnalisé sur l'actuelle vm. Les événements peuvent être déclenchés par `vm.$emit`, `vm.$dispatch` ou `vm.$broadcast`. La fonction de rappel recevra tous les arguments supplémentaires passés dans ces méthodes de déclenchement d'événement.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   vm.$on('test', function (msg) {
@@ -1193,51 +1193,51 @@ type: api
 <h3 id="vm-once">vm.$once( event, callback )</h3>
 
 - **Arguments:**
-  - `{String} event`
-  - `{Function} callback`
+  - `{Chaine} event`
+  - `{Fonction} callback`
 
 - **Usage:**
 
-  Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.
+  Écoute un événement personnalisé, mais seulement pour une fois. L'écouteur d'évènement sera supprimé une fois qu'il est déclenché pour la première fois.
 
 <h3 id="vm-off">vm.$off( [event, callback] )</h3>
 
 - **Arguments:**
-  - `{String} [event]`
-  - `{Function} [callback]`
+  - `{Chaine} [event]`
+  - `{Fonction} [callback]`
 
 - **Usage:**
 
-  Remove event listener(s).
+  Supprime un ou plusieurs écouteurs d'événement.
 
-  - If no arguments are provided, remove all event listeners;
+   - Si aucun argument n'est fourni, tous les écouteurs d'événement seront supprimés;
 
-  - If only the event is provided, remove all listeners for that event;
+   - Si seulement l'événement est fourni, cela supprime tous les écouteurs pour cet événement;
 
-  - If both event and callback are given, remove the listener for that specific callback only.
+   - Si l'événement et la fonction de rappel sont tous les deux fournis, cela supprimer l'écouteur uniquement pour cette fonction de rappel spécifique.
 
 <h3 id="vm-emit">vm.$emit( event, [...args] )</h3>
 
 - **Arguments:**
-  - `{String} event`
+  - `{Chaine} event`
   - `[...args]`
 
-  Trigger an event on the current instance. Any additional arguments will be passed into the listener's callback function.
+  Déclenche un événement sur l'instance actuelle. Tous les autres arguments seront passés dans la fonction de rappel de l'écouteur.
 
 <h3 id="vm-dispatch">vm.$dispatch( event, [...args] )</h3>
 
 - **Arguments:**
-  - `{String} event`
+  - `{Chaine} event`
   - `[...args]`
 
 - **Usage:**
 
-  Dispatch an event, first triggering it on the instance itself, and then propagates upward along the parent chain. The propagation stops when it triggers a parent event listener, unless that listener returns `true`. Any additional arguments will be passed into the listener's callback function.
+  Déclenche un événement, d'abord sur l'instance actuelle, puis se propage vers le haut le long de la chaîne hiérarchique. La propagation s'arrête quand il déclenche un écouteur d'événement parent, à moins que l'écouteur retourne `true`. Tous les arguments additonels seront passés dans la fonction de rappel de l'écouteur.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
-  // create a parent chain
+  // créer une arborescence d'instances de Vue
   var parent = new Vue()
   var child1 = new Vue({ parent: parent })
   var child2 = new Vue({ parent: child1 })
@@ -1255,30 +1255,31 @@ type: api
   child2.$dispatch('test')
   // -> "child2 notified"
   // -> "child1 notified"
-  // parent is NOT notified, because child1 didn't return
-  // true in its callback
+  // le parent n'est pas notifié, parce que child1 n'a pas retourné 
+  // 'true' dans sa fonction de rappel
   ```
 
-- **Voir aussi:** [Parent-Child Communication](/guide/components.html#Parent-Child-Communication)
+- **Voir aussi:** [Communication parent-enfant](/guide/components.html#Parent-Child-Communication)
 
 <h3 id="vm-broadcast">vm.$broadcast( event, [...args] )</h3>
 
 - **Arguments:**
-  - `{String} event`
+  - `{Chaine} event`
   - `[...args]`
 
 - **Usage:**
 
   Broadcast an event that propagates downward to all descendants of the current instance. Since the descendants expand into multiple sub-trees, the event propagation will follow many different "paths". The propagation for each path will stop when a listener callback is fired along that path, unless the callback returns `true`.
+  Diffuse un événement qui se propage vers le bas pour tous les descendants de l'instance actuelle. Étant donné que les descendants s'étendent en plusieurs sous-arbres, la propagation de l'événement suivra plusieurs "chemins" différents. La propagation pour chaque chemin s'arrêtera quand une fonction de rappel de l'écouteur est déclenchée le long de ce chemin, à moins qu'elle retourne `true`.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var parent = new Vue()
-  // child1 and child2 are siblings
+  // child1 et child2 sont au même niveau hiérarchique
   var child1 = new Vue({ parent: parent })
   var child2 = new Vue({ parent: parent })
-  // child3 is nested under child2
+  // child3 est l'enfant de child2
   var child3 = new Vue({ parent: child2 })
 
   child1.$on('test', function () {
@@ -1294,69 +1295,69 @@ type: api
   parent.$broadcast('test')
   // -> "child1 notified"
   // -> "child2 notified"
-  // child3 is NOT notified, because child2 didn't return
-  // true in its callback
+  // child3 n'est pas notifié, parce que child2 n'a pas retourné
+  // 'true' dans sa fonction de rappel
   ```
 
-## Instance Methods / DOM
+## Méthodes d'instance / DOM
 
 <h3 id="vm-appendTo">vm.$appendTo( elementOrSelector, [callback] )</h3>
 
 - **Arguments:**
-  - `{Element | String} elementOrSelector`
-  - `{Function} [callback]`
+  - `{Élément | Chaine} elementOrSelector`
+  - `{Fonction} [callback]`
 
-- **Returns:** `vm` - the instance itself
+- **Retourne:** `vm` - l'instance elle-même
 
 - **Usage:**
 
-  Append the Vue instance's DOM element or fragment to target element. The target can be either an element or a querySelector string. This method will trigger transitions if present. The callback is fired after the transition has completed (or immediately if no transition has been triggered).
+  Rajoute l'élément ou fragment DOM de l'instance Vue à l'élément cible. La cible peut être soit un élément ou une chaîne de querySelector. Cette méthode va déclencher des transitions si elle est présente. La fonction de rappel est déclenchée après que la transition ne soit terminée (ou immédiatement si aucune transition a été déclenchée).
 
 <h3 id="vm-before">vm.$before( elementOrSelector, [callback] )</h3>
 
 - **Arguments:**
-  - `{Element | String} elementOrSelector`
-  - `{Function} [callback]`
+  - `{Élément | Chaine} elementOrSelector`
+  - `{Fonction} [callback]`
 
-- **Returns:** `vm` - the instance itself
+- **Retourne:** `vm` - l'instance elle-même
 
 - **Usage:**
 
-  Insert the Vue instance's DOM element or fragment before target element. The target can be either an element or a querySelector string. This method will trigger transitions if present. The callback is fired after the transition has completed (or immediately if no transition has been triggered).
+  Insére l'élément ou fragment DOM de l'instance Vue avant l'élément cible. La cible peut être soit un élément ou une chaîne de querySelector. Cette méthode va déclencher des transitions si elle est présente. La fonction de rappel est déclenchée après que la transition ne soit terminée (ou immédiatement si aucune transition a été déclenchée).
 
 <h3 id="vm-after">vm.$after( elementOrSelector, [callback] )</h3>
 
 - **Arguments:**
-  - `{Element | String} elementOrSelector`
-  - `{Function} [callback]`
+  - `{Élément | Chaine} elementOrSelector`
+  - `{Fonction} [callback]`
 
-- **Returns:** `vm` - the instance itself
+- **Retourne:** `vm` - l'instance elle-même
 
 - **Usage:**
 
-  Insert the Vue instance's DOM element or fragment after target element. The target can be either an element or a querySelector string. This method will trigger transitions if present. The callback is fired after the transition has completed (or immediately if no transition has been triggered).
+  Insère l'élément ou fragment DOM de l'instance de Vue après l'élément cible. La cible peut être soit un élément ou une chaîne de querySelector. Cette méthode va déclencher des transitions si elle est présente. La fonction de rappel est déclenchée après que la transition ne soit terminée (ou immédiatement si aucune transition a été déclenchée).
 
 <h3 id="vm-remove">vm.$remove( [callback] )</h3>
 
 - **Arguments:**
-  - `{Function} [callback]`
+  - `{Fonction} [callback]`
 
-- **Returns:** `vm` - the instance itself
+- **Retourne:** `vm` - l'instance elle-même
 
 - **Usage:**
 
-  Remove the Vue instance's DOM element or fragment from the DOM. This method will trigger transitions if present. The callback is fired after the transition has completed (or immediately if no transition has been triggered).
+  Supprime l'élément ou fragment DOM de l'instance de Vue du DOM. Cette méthode va déclencher des transitions si elle est présente. La fonction de rappel est déclenchée après que la transition ne soit terminée (ou immédiatement si aucune transition a été déclenchée).
 
 <h3 id="vm-nextTick">vm.$nextTick( callback )</h3>
 
 - **Arguments:**
-  - `{Function} [callback]`
+  - `{Fonction} [callback]`
 
 - **Usage:**
 
-  Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update. This is the same as the global `Vue.nextTick`, except that the callback's `this` context is automatically bound to the instance calling this method.
+  Diffère l'exécution de la fonction de rappel après le prochain cycle de mise à jour DOM. À utiliser immédiatement après changement de certaines données pour attendre la mise à jour du DOM. Ceci est simliaire à la fonction globale `Vue.nextTick`, sauf que le contexte `this` de la fonction de rappel est automatiquement lié à l'instance qui fait appel à cette méthode.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   new Vue({
@@ -1364,12 +1365,12 @@ type: api
     methods: {
       // ...
       example: function () {
-        // modify data
+        // changement de données
         this.message = 'changed'
-        // DOM is not updated yet
+        // DOM n'est pas encore mis à jour
         this.$nextTick(function () {
-          // DOM is now updated
-          // `this` is bound to the current instance
+          // DOM est maintenant mis à jour
+          // `this` est lié à l'instance actuelle
           this.doSomethingElse()
         })
       }
@@ -1379,39 +1380,39 @@ type: api
 
 - **Voir aussi:**
   - [Vue.nextTick](#Vue-nextTick)
-  - [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
+  - [File d'attente de mise à jour asynchrone](/guide/reactivity.html#Async-Update-Queue)
 
-## Instance Methods / Lifecycle
+## Méthodes d'instance / Cycle de vie
 
 <h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
 
 - **Arguments:**
-  - `{Element | String} [elementOrSelector]`
+  - `{Élément | Chaine} [elementOrSelector]`
 
-- **Returns:** `vm` - the instance itself
+- **Retourne:** `vm` - l'instance elle-même
 
 - **Usage:**
 
-  If a Vue instance didn't receive the `el` option at instantiation, it will be in "unmounted" state, without an associated DOM element or fragment. `vm.$mount()` can be used to manually start the mounting/compilation of an unmounted Vue instance.
+  Si une instance de Vue n'a pas reçu l'option `el` à l'instanciation, elle sera dans l'état "détachée/démontée", sans un élément DOM ou un fragment associé. `vm.$mount()` peut être utilisé pour démarrer manuellement le montage/compilation d'une instance de Vue démontée.
 
-  If no argument is provided, the template will be created as an out-of-document fragment, and you will have to use other DOM instance methods to insert it into the document yourself. If `replace` option is set to `false`, then an empty `<div>` will be automatically created as the wrapper element.
+  Si aucun argument est fourni, le modèle sera créé comme un fragment hors-du- document, et vous aurez à utiliser vous-même d'autres méthodes d'instance de DOM pour l'insérer dans le document. Si l'option `replace` est définie sur `false`, alors un `<div>` sera automatiquement créé comme élément d'enveloppement.
 
-  Calling `$mount()` on an already mounted instance will have no effect. The method returns the instance itself so you can chain other instance methods after it.
+  L'appel à `$mount()` sur une instance déjà montée n'a aucun effet. La méthode renvoie l'instance elle-même de sorte que vous pouvez enchaîner d'autres méthodes d'instance après elle.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
   var MyComponent = Vue.extend({
     template: '<div>Hello!</div>'
   })
 
-  // create and mount to #app (will replace #app)
+  // créer et attacher à #app (remplacera <div id="#app"></div>)
   new MyComponent().$mount('#app')
 
-  // the above is the same as:
+  // ci-dessus est le même que:
   new MyComponent({ el: '#app' })
 
-  // or, compile off-document and append afterwards:
+  // Ou, compiler hors-du-document et ajouter ensuite:
   new MyComponent().$mount().$appendTo('#container')
   ```
 
@@ -1420,13 +1421,13 @@ type: api
 <h3 id="vm-destroy">vm.$destroy( [remove] )</h3>
 
 - **Arguments:**
-  - `{Boolean} [remove] - default: false`
+  - `{Booléen} [remove] - default: false`
 
 - **Usage:**
 
-  Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners and, if the `remove` argument is true, remove its associated DOM element or fragment from the DOM.
+  Détruit complètement une `vm`. Supprime ses connexions avec d'autres vms existantes, détache toutes ses directives, annule tous les écouteurs d'événements et, si l'argument `remove` est défini à `true`, supprime alors son élément DOM ou son fragment du DOM associé.
 
-  Triggers the `beforeDestroy` and `destroyed` hooks.
+  Déclenche les hooks `beforeDestroy` et `destroyed`.
 
 - **Voir aussi:** [Diagramme du cycle de vie](/guide/instance.html#Lifecycle-Diagram)
 
@@ -1434,71 +1435,73 @@ type: api
 
 ### v-text
 
-- **Expects:** `String`
+- **S'attend à:** `Chaine`
 
 - **Détails:**
 
-  Updates the element's `textContent`.
+  Met à jour le `textContent` de l'élément. 
 
-  Internally, `{% raw %}{{ Mustache }}{% endraw %}` interpolations are also compiled as a `v-text` directive on a textNode. The directive form requires a wrapper element, but offers slightly better performance and avoids FOUC (Flash of Uncompiled Content).
+  En interne, les interpolations `{% raw %}{{ Mustache }}{% endraw %}` sont aussi compilées sur un noeud texte comme une directive `v-text`. La forme de la directive exige un élément d'enveloppement, mais offre des performances légèrement meilleures et évite FOUC (Flash of Uncompiled Content - Flashage du contenu non compilé).
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <span v-text="msg"></span>
-  <!-- same as -->
+  <!-- est la même chose que: -->
   <span>{{msg}}</span>
   ```
 
 ### v-html
 
-- **Expects:** `String`
+- **S'attend à:** `Chaine`
 
 - **Détails:**
 
-  Updates the element's `innerHTML`. The contents are inserted as plain HTML - data bindings are ignored. If you need to reuse template pieces, you should use [partials](#partial).
+  Met à jour le `innerHTML` de l'élément. Le contenu est inséré en tant que HTML brut - les liaisons de données sont ignorées. Si vous avez besoin de réutiliser des parties de modèle, vous devez utiliser [partials](#partial).
 
-  Internally, `{% raw %}{{{ Mustache }}}{% endraw %}` interpolations are also compiled as a `v-html` directive using anchor nodes. The directive form requires a wrapper element, but offers slightly better performance and avoids FOUC (Flash of Uncompiled Content).
+  En interne, les interpolations `{% raw %}{{ Mustache }}{% endraw %}` sont aussi compilées comme une directive `v-html` utilisant des noeuds d'ancrage. La forme de la directive exige un élément d'enveloppement, mais offre des performances légèrement meilleures et évite FOUC (Flash of Uncompiled Content - Flashage du contenu non compilé).
 
-  <p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.</p>
+  <p class="tip">Le rendu dynamique de contenu HTML sur votre site Web peut être très dangereux, car il peut facilement conduire à des [Attaques XSS] (https://fr.wikipedia.org/wiki/Cross-site_scripting). Utilisez uniquement `v-html` sur un contenu de confiance et **jamais** sur un contenu fourni par l'utilisateur.</p>
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <div v-html="html"></div>
-  <!-- same as -->
+  <!-- est la même chose que: -->
   <div>{{{html}}}</div>
   ```
 
 ### v-if
 
-- **Expects:** `*`
+- **S'attend à:** `*`
 
 - **Usage:**
 
-  Conditionally render the element based on the truthy-ness of the expression value. The element and its contained data bindings / components are destroyed and re-constructed during toggles. If the element is a `<template>` element, its content will be extracted as the conditional block.
+  Rendu conditonnel de l'élément sur la base de la valeur de l'expression `true` ou `false`. L'élément, ses liaisons de données et ses composants sont détruits et re-générés lors du changement de condition. Si l'élément est un `<template>` élément, son contenu sera extrait comme étant le bloc conditionnel.
 
-- **Voir aussi:** [Conditional Rendering](/guide/conditional.html)
+- **Voir aussi:** [Rendu conditionel](/guide/conditional.html)
 
 ### v-show
 
-- **Expects:** `*`
+- **S'attend à:** `*`
 
 - **Usage:**
 
   Toggle's the element's `display` CSS property based on the truthy-ness of the expression value. Triggers transitions if present.
 
-- **Voir aussi:** [Conditional Rendering - v-show](/guide/conditional.html#v-show)
+  Change la propriété CSS `display` de l'élément sur la base de la valeur d'expression `true` ou `false`. Déclenche les transitions si elles sont présentes.
+
+- **Voir aussi:** [Rendu condionnel - v-show](/guide/conditional.html#v-show)
 
 ### v-else
 
-- **Does not expect expression**
+- **Ne s'attend pas à avoir une expression**
 
-- **Restriction:** previous sibling element must have `v-if` or `v-show`.
+- **Restriction:** précédent élément du même niveau dom doit avoir `v-if` ou ` v-show`.
 
 - **Usage:**
 
-  Denote the "else block" for `v-if` and `v-show`.
+  Désigne le "bloc else" pour `v-if` et `v-show`.
 
   ``` html
   <div v-if="Math.random() > 0.5">
@@ -1509,13 +1512,13 @@ type: api
   </div>
   ```
 
-- **Voir aussi:** [Conditional Rendering - v-else](/guide/conditional.html#v-else)
+- **Voir aussi:** [Rendu conditionel - v-else](/guide/conditional.html#v-else)
 
 ### v-for
 
-- **Expects:** `Array | Object | Number | String`
+- **S'attend à:** `Tableau | Objet | Nombre | Chaine`
 
-- **Param Attributes:**
+- **Paramètres d'attribut:**
   - [`track-by`](/guide/list.html#track-by)
   - [`stagger`](/guide/transitions.html#Staggering-Transitions)
   - [`enter-stagger`](/guide/transitions.html#Staggering-Transitions)
@@ -1523,7 +1526,7 @@ type: api
 
 - **Usage:**
 
-  Render the element or template block multiple times based on the source data. The directive's value must use the special syntax `alias (in|of) expression` to provide an alias for the current element being iterated on:
+  Génère l'élément ou bloc de modèle à plusieurs reprises sur la base des données source. La valeur de la directive doit utiliser la syntaxe spéciale `alias (in|of) expression` pour fournir un alias pour l'élément courant de l'itération:
 
   ``` html
   <div v-for="item in items">
@@ -1531,45 +1534,45 @@ type: api
   </div>
   ```
 
-  Note using `of` as the delimiter is only supported in 1.0.17+.
+  Notez que l'utilisation de `of` comme délimiteur est uniquement diponible à partir de la version 1.0.17+.
 
-  Alternatively, you can also specify an alias for the index (or the key if used on an Object):
+  Alternativement, vous pouvez également spécifier un alias pour l'index (ou la clé si l'itération est sur un objet):
 
   ``` html
   <div v-for="(index, item) in items"></div>
-  <div v-for="(key, val) in object"></div>
+  <div v-for="(cle, valeur) in objet"></div>
   ```
 
-  The detailed usage for `v-for` is explained in the guide section linked below.
+  L'utilisation détaillée de `v-for` est expliquée dans la section [Rendu de liste](/guide/list.html)
 
-- **Voir aussi:** [List Rendering](/guide/list.html).
+- **Voir aussi:** [Rendu de liste](/guide/list.html).
 
 ### v-on
 
-- **Shorthand:** `@`
+- **Raccourci:** `@`
 
-- **Expects:** `Function | Inline Statement`
+- **S'attend à:** `Fonction | déclaration en ligne (inline statement)`
 
-- **Argument:** `event (required)`
+- **Argument:** `event (requis)`
 
-- **Modifiers:**
-  - `.stop` - call `event.stopPropagation()`.
-  - `.prevent` - call `event.preventDefault()`.
-  - `.capture` - add event listener in capture mode.
-  - `.self` - only trigger handler if event was dispatched from this element.
-  - `.{keyCode | keyAlias}` - only trigger handler on certain keys.
+- **Modificateurs:**
+  - `.stop` - appelle `event.stopPropagation()`.
+  - `.prevent` - appelle `event.preventDefault()`.
+  - `.capture` - ajoute un écouteur d'évènement en mode capture.
+  - `.self` - déclenche uniquement le gestionnaire si l'évènement est envoyé de cet élément.
+  - `.{keyCode | keyAlias}` - déclenche uniquement le gestionnaire sur certaines touches.
 
 - **Usage:**
 
-  Attaches an event listener to the element. The event type is denoted by the argument. The expression can either be a method name or an inline statement, or simply omitted when there are modifiers present.
+  Attache un écouteur d'événement à l'élément. Le type d'événement est désigné par l'argument. L'expression peut être soit un nom de méthode ou une déclaration en ligne (inline statement), ou tout simplement omis quand il y a des modificateurs présents.
 
-  When used on a normal element, it listens to **native DOM events** only. When used on a custom element component, it also listens to **custom events** emitted on that child component.
+  Lorsqu'il est utilisé sur un élément normal, il écoute les **événements DOM natifs** seulement. Lorsqu'il est utilisé sur un composant d'élément personnalisé, il écoute aussi les **événements personnalisés** émis sur ce composant enfant.
 
-  When listening to native DOM events, the method receives the native event as the only argument. If using inline statement, the statement has access to the special `$event` property: `v-on:click="handle('ok', $event)"`.
+  Lors de l'écoute des événements DOM natifs, la méthode reçoit l'événement natif comme seul argument. Si vous utilisez la déclaration en ligne, la déclaration a accès à la propriété particulière `$event`: `v-on:click="handle('ok', $event)"`.
 
-  **1.0.11+** When listening the custom events, inline statements have access to the special `$arguments` property, which is an array of the additional arguments passed to the child components' `$emit` call.
+  **1.0.11+** Lorsque de l'écoute ses événements personnalisés, des déclaration en ligne (inline statement) ont accès à la propriété spéciale `$arguments`, qui est un tableau des arguments supplémentaires passés à l'appel `$emit` des composants de l'enfant.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <!-- method handler -->
@@ -1600,7 +1603,7 @@ type: api
   <input @keyup.13="onEnter">
   ```
 
-  Listening to custom events on a child component (the handler is called when "my-event" is emitted on the child):
+  En écoutant des événements personnalisés sur un composant enfant (le gestionnaire est appelé lorsque «my-evenement" est émis sur l'enfant):
 
   ``` html
   <my-component @my-event="handleThis"></my-component>
@@ -1609,32 +1612,33 @@ type: api
   <my-component @my-event="handleThis(123, $arguments)"></my-component>
   ```
 
-- **Voir aussi:** [Methods and Event Handling](/guide/events.html)
+- **Voir aussi:** [Méthodes et gestion des événements](/guide/events.html)
 
 ### v-bind
 
-- **Shorthand:** `:`
+- **Raccourci:** `:`
 
-- **Expects:** `* (with argument) | Object (without argument)`
+- **S'attend à:** `* (avec argument) | Object (sans argument)`
 
-- **Argument:** `attrOrProp (optional)`
+- **Argument:** `attrOrProp (facultatif)`
 
-- **Modifiers:**
-  - `.sync` - make the binding two-way. Only respected for prop bindings.
-  - `.once` - make the binding one-time. Only respected for prop bindings.
-  - `.camel` - convert the attribute name to camelCase when setting it. Only respected for normal attributes. Used for binding camelCase SVG attributes.
+- **Modificateurs:**
+  - `.sync` - Fait que la liaison soit dans les deux sens (two-way). Appliqué seulement sur la liaison de propriétés.
+  - `.once` - Fait que la liaison soit faite une fois uniquement. Appliqué seulement sur la liaison de propriétés.
+  - `.camel` - Convertit le nom d'attribut en camelCase lors de son initialisation. Seulement respecté pour les attributs normaux. Utilisé pour la liaison des attributs SVG camelCase.
 
 - **Usage:**
 
-  Dynamically bind one or more attributes, or a component prop to an expression.
+  Lie dynamiquement un ou plusieurs attributs, ou une propriété de composant à une expression.
 
-  When used to bind the `class` or `style` attribute, it supports additional value types such as Array or Objects. See linked guide section below for more details.
+  Lorsqu'il est utilisé pour lier l'attribut `class` ou `style`, il prend en charge les types de valeurs supplémentaires, tels que les tableau ou les objets. Voir la section de guidage lié ci-dessous pour plus de détails.
 
-  When used for prop binding, the prop must be properly declared in the child component. Prop bindings can specify a different binding type using one of the modifiers.
+  Lorsqu'il est utilisé pour la liaison de propriété, la propriété doit être correctement déclarée dans le composant enfant. les liaisons de propriété peuvent spécifier un type de liaison différent en utilisant l'un des modificateurs.
 
-  When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode `class` and `style` does not support Array or Objects.
+  Lorsqu'il est utilisé sans argument, peut être utilisé pour lier un objet contenant des paires nom-valeur attribut. Remarque: dans ce mode, `class` et `style` ne supporte pas les tableaux ou les objets.
 
-- **Example:**
+
+- **Exemple:**
 
   ``` html
   <!-- bind an attribute -->
@@ -1666,34 +1670,34 @@ type: api
   ```
 
 - **Voir aussi:**
-  - [Class and Style Bindings](/guide/class-and-style.html)
-  - [Component Props](/guide/components.html#Props)
+  - [Classes et liaisons de style](/guide/class-and-style.html)
+  - [Propriétés de composant](/guide/components.html#Props)
 
 ### v-model
 
-- **Expects:** varies based on input type
+- **S'attend à:** varie en fonction du type d'input
 
-- **Limited to:**
+- **Limité à:**
   - `<input>`
   - `<select>`
   - `<textarea>`
 
-- **Param Attributes:**
+- **Paramètres d'attribut:**
   - [`lazy`](/guide/forms.html#lazy)
   - [`number`](/guide/forms.html#number)
   - [`debounce`](/guide/forms.html#debounce)
 
 - **Usage:**
 
-  Create a two-way binding on a form input element. For detailed usage, see guide section linked below.
+  Crée une liaison dans les deux sens sur un élément input.
 
-- **Voir aussi:** [Form Input Bindings](/guide/forms.html)
+- **Voir aussi:** [Liaisons d'input](/guide/forms.html)
 
 ### v-ref
 
-- **Does not expect expression**
+- **Ne s'attend pas à avoir une expression**
 
-- **Limited to:** child components
+- **Limité à:** child components
 
 - **Argument:** `id (required)`
 
@@ -1707,7 +1711,7 @@ type: api
 
   Because HTML is case-insensitive, camelCase usage like `v-ref:someRef` will be converted to all lowercase. You can use `v-ref:some-ref` which properly sets `this.$refs.someRef`.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <comp v-ref:child></comp>
@@ -1731,23 +1735,24 @@ type: api
   this.$refs.list
   ```
 
-- **Voir aussi:** [Child Component Refs](/guide/components.html#Child-Component-Refs)
+- **Voir aussi:** [Références du composant enfant](/guide/components.html#Child-Component-Refs)
 
 ### v-el
 
-- **Does not expect expression**
+- **Ne s'attend pas à avoir une expression**
 
-- **Argument:** `id (required)`
+- **Argument:** `id (requis)`
 
 - **Usage:**
 
-  Register a reference to a DOM element on its owner Vue instance's `$els` object for easier access.
+  Enregistre une référence à un élément DOM sur l'objet `$els` de sa propre instance Vue pour en faciliter l'accès.
 
 - **Note:**
 
   Because HTML is case-insensitive, camelCase usage like `v-el:someEl` will be converted to all lowercase. You can use `v-el:some-el` which properly sets `this.$els.someEl`.
+  HTML étant insensible à la casse, l'utilisation de camelCase comme `v-el: someEl` sera converti en minuscules. Vous pouvez utiliser `v-el: some-el` qui définit correctement `this.$els.someEl`.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <span v-el:msg>hello</span>
@@ -1760,27 +1765,28 @@ type: api
 
 ### v-pre
 
-- **Does not expect expression**
+- **Ne s'attend pas à avoir une expression**
 
 - **Usage**
 
-  Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.
+  Ignore la compilation pour cet élément et tous ses enfants. Vous pouvez l'utiliser pour afficher les balises d'interpolation mustache. Ignorer un grand nombre de nœuds sans directives peut aussi accélérer la compilation.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
-  <span v-pre>{{ this will not be compiled }}</span>
+  <span v-pre>{{ ceci ne sera pas compilé }}</span>
   ```
 
 ### v-cloak
 
-- **Does not expect expression**
+- **Ne s'attend pas à avoir une expression**
 
 - **Usage:**
 
   This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as `[v-cloak] { display: none }`, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.
+  Cette directive restera sur l'élément jusqu'à ce que l'instance de Vue associée termine la compilation. Combiné avec les règles CSS comme `[v-cloak] {display: none}`, cette directive peut être utilisé pour cacher les interpolations non-compilées jusqu'à ce que l'instance de Vue soit prête.
 
-- **Example:**
+- **Exemple:**
 
   ``` css
   [v-cloak] {
@@ -1794,79 +1800,79 @@ type: api
   </div>
   ```
 
-  The `<div>` will not be visible until the compilation is done.
+  `<div>` ne sera visible que lorsque la compilation ne soit terminée.
 
-## Special Elements
+## Éléments Spéciaux
 
 ### component
 
-- **Attributes:**
+- **Attributs:**
   - `is`
 
-- **Param Attributes:**
+- **Paramètres d'attribut:**
   - [`keep-alive`](/guide/components.html#keep-alive)
   - [`transition-mode`](/guide/components.html#transition-mode)
 
 - **Usage:**
 
-  Alternative syntax for invoking components. Primarily used for dynamic components with the `is` attribute:
+  Syntaxe alternative pour appeler les composants. Principalement utilisé pour les composants dynamiques avec l'attribut `is`:
 
   ``` html
-  <!-- a dynamic component controlled by -->
-  <!-- the `componentId` property on the vm -->
+  <!-- un compsant dynamique controllé par -->
+  <!-- la propriété `componentId` sur l'instance vm -->
   <component :is="componentId"></component>
   ```
 
-- **Voir aussi:** [Dynamic Components](/guide/components.html#Dynamic-Components)
+- **Voir aussi:** [Composants dynamiques](/guide/components.html#Dynamic-Components)
 
 ### slot
 
-- **Attributes:**
+- **Attributs:**
   - `name`
 
 - **Usage:**
 
-  `<slot>` elements serve as content distribution outlets in component templates. The slot element itself will be replaced.
+  `<slot>` éléments servent de points de distribution de contenu dans les modèles de composants. L'élément slot lui-même sera remplacé.
 
-  A slot with the `name` attribute is called a named slot. A named slot will distribute content with a `slot` attribute that matches its name.
+  Un slot avec l'attribut `name` est appelé un slot nommé. Un slot nommé va distribuer le contenu avec un attribut `slot` qui correspond à son nom.
 
-  For detailed usage, see the guide section linked below.
+  Pour une utilisation détaillée, voir la section du guide ci-dessous.
 
-- **Voir aussi:** [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
+- **Voir aussi:** [Distribution de contenu avec des slots](/guide/components.html#Content-Distribution-with-Slots)
 
 ### partial
 
-- **Attributes:**
+- **Attributs:**
   - `name`
 
 - **Usage:**
 
-  `<partial>` elements serve as outlets for registered template partials. Partial contents are also compiled by Vue when inserted. The `<partial>` element itself will be replaced. It requires a `name` attribute which will be used to resolve the partial's content.
+  `<partial>` éléments servent de noeuds pour des modèles partiels  enregistrés. les contenus partiels sont également compilées par l'instance de Vue lorsqu'ils sont insérés. L'élément `<partial>` sera remplacé. cet élément exige un attribut `name` qui sera utilisé pour résoudre le contenu partiel.
 
-- **Example:**
+- **Exemple:**
 
   ``` js
-  // registering a partial
+  // déclaration d'un contenu partiel
   Vue.partial('my-partial', '<p>This is a partial! {{msg}}</p>')
   ```
 
   ``` html
-  <!-- a static partial -->
+  <!-- contenu partiel statique -->
   <partial name="my-partial"></partial>
 
-  <!-- a dynamic partial -->
-  <!-- renders partial with id === vm.partialId -->
+  <!-- contenu partiel dynamique -->
+  <!-- compile le contenu partiel avec id === vm.partialId -->
   <partial v-bind:name="partialId"></partial>
 
-  <!-- dynamic partial using v-bind shorthand -->
+  <!-- contenu partiel dynamique utilisant le raccourci de v-bind -->
   <partial :name="partialId"></partial>
   ```
 
-## Filters
+## Filtres
 
 ### capitalize
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   {{ msg | capitalize }}
@@ -1876,7 +1882,7 @@ type: api
 
 ### uppercase
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   {{ msg | uppercase }}
@@ -1886,7 +1892,7 @@ type: api
 
 ### lowercase
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   {{ msg | lowercase }}
@@ -1897,9 +1903,9 @@ type: api
 ### currency
 
 - **Arguments:**
-  - `{String} [symbol] - default: '$'`
+  - `{Chaine} [symbol] - default: '$'`
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   {{ amount | currency }}
@@ -1907,7 +1913,7 @@ type: api
 
   *12345 => $12,345.00*
 
-  Use a different symbol:
+  Utilisant un autre symbole:
 
   ``` html
   {{ amount | currency '£' }}
@@ -1918,13 +1924,13 @@ type: api
 ### pluralize
 
 - **Arguments:**
-  - `{String} single, [double, triple, ...]`
+  - `{Chaine} single, [double, triple, ...]`
 
 - **Usage:**
 
-  Pluralizes the argument based on the filtered value. When there is exactly one argument, plural forms simply add an "s" at the end. When there are more than one argument, the arguments will be used as array of strings corresponding to the single, double, triple ... forms of the word to be pluralized. When the number to be pluralized exceeds the length of the arguments, it will use the last entry in the array.
+  Pluralise l'argument en se basant sur la valeur filtrée. Quand il y a exactement un argument, cela ajoutera simplement un «s» à la fin. Quand il y a plus d'un argument, les arguments seront utilisés comme tableau de chaînes correspondant aux formes: (simples, doubles, triples...) de mot à pluraliser. Lorsque le numéro à pluraliser dépasse la longueur des arguments, il utilisera la dernière entrée dans le tableau.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   {{count}} {{count | pluralize 'item'}}
@@ -1937,7 +1943,7 @@ type: api
   {{date}}{{date | pluralize 'st' 'nd' 'rd' 'th'}}
   ```
 
-  Will result in:
+  Le résultat sera:
 
   *1 => '1st'*
   *2 => '2nd'*
@@ -1948,15 +1954,15 @@ type: api
 ### json
 
 - **Arguments:**
-  - `{Number} [indent] - default: 2`
+  - `{Nombre} [indent] - default: 2`
 
 - **Usage:**
 
-  Output the result of calling `JSON.stringify()` on the value instead of outputting the `toString()` value (e.g. `[object Object]`).
+  Retourne le résultat de l'appel `JSON.stringify()` sur la valeur au lieu de retourner le résultat de `toString ()` (par exemple `[object Object]`).
 
-- **Example:**
+- **Exemple:**
 
-  Print an object with 4-space indent:
+  Affiche un objet avec une indentation de 4-espaces:
 
   ``` html
   <pre>{{ nestedObject | json 4 }}</pre>
@@ -1964,16 +1970,16 @@ type: api
 
 ### debounce
 
-- **Limited to:** directives that expect `Fonction` values, e.g. `v-on`
+- **Limité à:** Les directives qui s'attendent à `Fonction` comme valeur, e.g. `v-on`
 
 - **Arguments:**
-  - `{Number} [wait] - default: 300`
+  - `{Nombre} [wait] - default: 300`
 
 - **Usage:**
 
-  Wrap the handler to debounce it for `x` milliseconds, where `x` is the argument. Default wait time is 300ms. A debounced handler will be delayed until at least `x` ms has passed after the call moment; if the handler is called again before the delay period, the delay period is reset to `x` ms.
+  Retarde l'exécution de la `Fonction` de `x` millisecondes, où `x` est l'argument. Le temps de délai par défaut est de 300ms. Si le gestionnaire est appelé à nouveau avant le délai imparti, le délai sera remis à `x` millisecondes.
 
-- **Example:**
+- **Exemple:**
 
   ``` html
   <input @keyup="onKeyup | debounce 500">
@@ -1981,54 +1987,54 @@ type: api
 
 ### limitBy
 
-- **Limited to:** directives that expect `Array` values, e.g. `v-for`
+- **Limité à:** Les directives qui s'attendent à `Array` comme valeur, e.g. `v-for`
 
 - **Arguments:**
-  - `{Number} limit`
-  - `{Number} [offset]`
+  - `{Nombre} limit`
+  - `{Nombre} [offset]`
 
 - **Usage:**
 
-  Limit the array to the first N items, as specified by the argument. An optional second argument can be provided to set a starting offset.
+  Limite le tableau pour les N premiers éléments, spécifié par l'argument. Un second argument facultatif peut être fourni pour définir un offset de départ.
 
   ``` html
-  <!-- only display first 10 items -->
+  <!-- affiche uniquement les 10 premiers éléments -->
   <div v-for="item in items | limitBy 10"></div>
 
-  <!-- display items 5 to 15 -->
+  <!-- affiche 10 éléments à partir du 5ème élément, soit l'intervalle 5 à 15 -->
   <div v-for="item in items | limitBy 10 5"></div>
   ```
 
 ### filterBy
 
-- **Limited to:** directives that expect `Array` values, e.g. `v-for`
+- **Limité à:** Les directives qui s'attendent à `Array` comme valeur, e.g. `v-for`
 
 - **Arguments:**
-  - `{String | Function} targetStringOrFunction`
+  - `{Chaine | Fonction} targetStringOrFunction`
   - `"in" (optional delimiter)`
-  - `{String} [...searchKeys]`
+  - `{Chaine} [...searchKeys]`
 
 - **Usage:**
 
-  Return a filtered version of the source Array. The first argument can either be a string or a function.
+  Retourne une version filtrée du tableau source. Le premier argument peut être une chaîne ou une fonction.
 
-  When the first argument is a string, it will be used as the target string to search for in each element of the Array:
+  Lorsque le premier argument est une chaîne, elle sera utilisée comme la chaîne cible à rechercher dans chaque élément du tableau:
 
   ``` html
-  <div v-for="item in items | filterBy 'hello'">
+  <div v-for="item in items | filterBy 'bonjour'">
   ```
 
-  In the above example, only items that contain the target string `"hello"` will be displayed.
+  Dans l'exemple ci-dessus, seuls les éléments contenant la chaîne cible `" bonjour"` seront affichés.
 
-  If the item is an object, the filter will recursively search every nested property of the object for the target string. To narrow down the search scope, additional search keys can be specified:
+  Si l'élément est un objet, le filtre recherchera la chaîne cible récursivement dans chaque propriété imbriquée de l'objet. Pour restreindre la portée de la recherche, des clés supplémentaires de recherche peuvent être spécifiées:
 
   ``` html
   <div v-for="user in users | filterBy 'Jack' in 'name'">
   ```
 
-  In the above example, the filter will only search for `"Jack"` in the `name` field of each user object. **It is a good idea to always limit the search scope for better performance.**
+  Dans l'exemple ci-dessus, le filtre ne recherchera `" Jack "` que dans le champ `name` de chaque objet. **C'est une bonne idée de toujours limiter la portée de la recherche pour une meilleure performance.**
 
-  The examples above are using static arguments - we can, of course, use dynamic arguments as target string or search keys. Combined with `v-model` we can easily implement type-ahead filtering:
+  Les exemples ci-dessus utilisent des arguments statiques - nous pouvons, bien sûr, utiliser des arguments dynamiques comme chaîne cible ou les touches de recherche. Combiné avec `v-model` nous pouvons facilement mettre en œuvre un filtrage "typeahead":
 
   ``` html
   <div id="filter-by-example">
@@ -2075,22 +2081,22 @@ type: api
   </script>
   {% endraw %}
 
-- **Additional Examples:**
+- **Exemples supplémentaires:**
 
-  Multiple search keys:
+  Recherche à multiples clés:
 
   ``` html
   <li v-for="user in users | filterBy searchText in 'name' 'phone'"></li>
   ```
 
-  Multiple search keys with a dynamic Array argument:
+  Recherche à multiples clés avec comme argument un tableau dynamique:
 
   ``` html
   <!-- fields = ['fieldA', 'fieldB'] -->
   <div v-for="user in users | filterBy searchText in fields">
   ```
 
-  Use a custom filter function:
+  Utilisation d'une fonction de filtre personnalisé:
 
   ``` html
   <div v-for="user in users | filterBy myCustomFilterFunction">
@@ -2098,21 +2104,21 @@ type: api
 
 ### orderBy
 
-- **Limited to:** directives that expect `Array` values, e.g. `v-for`
+- **Limité à:** Les directives qui s'attendent à `Array` comme valeur, e.g. `v-for`
 
 - **Arguments:**
-  - `{String} sortKey`
-  - `{String} [order] - default: 1`
+  - `{Chaine} sortKey`
+  - `{Chaine} [order] - default: 1`
 
 - **Usage:**
 
-  Return a sorted version of the source Array. The `sortKey` is the key to use for the sorting. The optional `order` argument specifies whether the result should be in ascending (`order >= 0`) or descending (`order < 0`) order.
+  Retourne une version triée du tableau source. Le `sortKey` est la clé à utiliser pour le tri. L'argument facultatif `order` spécifie si le résultat doit être en ordre croissant (`ordre> = 0`) ou décroissant (`ordre <0`).
 
-  For arrays of primitive values, any truthy `sortKey` will work.
+  Pour les tableaux de valeurs primitives, toute vraie valeur de `sortKey` fonctionnera.
 
-- **Example:**
+- **Exemple:**
 
-  Sort users by name:
+  Tri des utilisateurs par la propriété 'name':
 
   ``` html
   <ul>
@@ -2122,7 +2128,7 @@ type: api
   </ul>
   ```
 
-  In descending order:
+  Par ordre descendant:
 
   ``` html
   <ul>
@@ -2132,7 +2138,7 @@ type: api
   </ul>
   ```
 
-  Sort primitive values:
+  Trier les valeurs primitives:
 
   ``` html
   <ul>
@@ -2142,7 +2148,7 @@ type: api
   </ul>
   ```
 
-  Dynamic sort order:
+  Ordre de tri dynamique:
 
   ``` html
   <div id="orderby-example">
@@ -2185,38 +2191,38 @@ type: api
   </script>
   {% endraw %}
 
-## Array Extension Methods
+## Méthodes d'extension de tableau
 
-Vue.js extends `Array.prototype` with two additional methods that makes it easier to perform some common Array operations while ensuring reactive updates are properly triggered.
+Vue.js étend `Array.prototype` avec deux autres méthodes rendant plus facile la réalisation de certaines opérations communes de tableau, tout en assurant que les mises à jour réactives sont correctement déclenchées.
 
 ### array.$set(index, value)
 
 - **Arguments**
-  - `{Number} index`
+  - `{Nombre} index`
   - `{*} value`
 
 - **Usage**
 
-  Set an element in the array to a value by index and trigger view updates.
+  Définit une valeur à un élément du tableau par l'index et déclenche les mises à jour de la vue.
 
   ``` js
   vm.animals.$set(0, { name: 'Aardvark' })
   ```
 
-- **Voir aussi:** [Array Detection Caveats](/guide/list.html#Caveats)
+- **Voir aussi:** [Mises en garde de détection de tableau](/guide/list.html#Caveats)
 
 ### array.$remove(reference)
 
 - **Arguments**
-  - `{Reference} reference`
+  - `{Référence} reference`
 
 - **Usage**
 
-  Remove an element from an array by reference and trigger view updates. This is a sugar method for first searching for the element in the array, and then if found, calling `array.splice(index, 1)`.
+  Supprime un élément d'un tableau par référence et déclenche les mises à jour de la vue. Ceci est une "pré-méthode" qui, dans un premier temps, recherche l'élément dans le tableau, et ensuite, si trouvé, fait appel à `Array.splice (index, 1)`.
 
   ``` js
   var aardvark = vm.animals[0]
   vm.animals.$remove(aardvark)
   ```
 
-- **Voir aussi:** [Mutation Methods](/guide/list.html#Mutation-Methods)
+- **Voir aussi:** [Méthodes de mutation](/guide/list.html#Mutation-Methods)
