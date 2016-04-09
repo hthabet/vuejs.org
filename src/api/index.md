@@ -775,8 +775,7 @@ type: api
 
   Une liste de chaines partielles (HTML/texte) pour l'instance de Vue.
 
-- **Voir aussi:**
-  - [Éléments Spéciaux - partial](#partial)
+- **Voir aussi:** [Éléments Spéciaux - partial](#partial)
 
 ## Options / Misc
 
@@ -1145,7 +1144,7 @@ type: api
 
 - **Usage:**
 
-  Évalue un partie de modèle contenant des interpolations `{{...}})`. Notez que cette méthode effectue simplement l'interpolation de chaîne; les directives d'attribut sont ignorées.
+  Évalue un partie de modèle contenant des interpolations `{{expression}})`. Notez que cette méthode effectue simplement l'interpolation de chaîne; les directives d'attribut sont ignorées.
 
 - **Exemple:**
 
