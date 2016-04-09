@@ -4,7 +4,7 @@ type: examples
 order: 9
 ---
 
-> This is a fully spec-compliant TodoMVC implementation in under 120 effective lines of JavaScript (excluding comments and blank lines).
+> Ceci est une implémentation TodoMVC totalement conforme aux specs, réalisée en moins de 120 lignes de JavaScript (sans compter les commentaires et les saut de ligne).
 
 <iframe width="100%" height="500" src="todomvc/index.html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
