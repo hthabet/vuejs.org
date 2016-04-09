@@ -22,9 +22,9 @@ type: api
 
   1. affichera les traces d'appels pour tous les avertissements.
 
-  2. Fera que tous les nœuds d'ancrage seront visibles dans le DOM sous forme de commentaire. Cela rend plus facile l'inspection de la structure du résultat rendu.
+  2. Fera en sorte que tous les nœuds d'ancrage soient visibles dans le DOM sous forme de commentaires. Cela rend plus facile l'inspection de la structure du résultat rendu.
 
-  <p class="tip">Le mode débogage est disponible uniquement dans le build de développement.</p>
+  <p class="tip">Le mode débogage est uniquement disponible dans le build de développement.</p>
 
 ### delimiters
 
@@ -82,7 +82,7 @@ type: api
   Vue.config.async = false
   ```
 
-  Lorsque le mode async n'est pas actif, Vue effectuera toutes les mises à jour du DOM de manière synchrone dès la détection de changement de données. Cela peut faciliter le débogage dans certains scénarios, mais pourrait également provoquer une dégradation des performances et affecter l'ordre dans lequel les fonctions de retour d'observation sont appelées. **`async: false` n'est pas recommandé en production.**
+  Lorsque le mode async n'est pas actif, Vue effectuera toutes les mises à jour du DOM de manière synchrone dès la détection d'un changement de données. Cela peut faciliter le débogage dans certains scénarios, mais pourrait également provoquer une dégradation des performances et affecter l'ordre dans lequel les fonctions de retour d'observation sont appelées. **`async: false` n'est pas recommandé en production.**
 
 ### devtools
 
@@ -119,7 +119,7 @@ type: api
   ``` js
   // créer un contructeur réutilisable
   var Profile = Vue.extend({
-    template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>'
+    template: '<p>{{firstName}} {{lastName}} alias {{alias}}</p>'
   })
   // créer une instance de profil
   var profile = new Profile({
@@ -136,7 +136,7 @@ type: api
   Le résultat sera:
 
   ``` html
-  <p>Walter White aka Heisenberg</p>
+  <p>Walter White alias Heisenberg</p>
   ```
 
 - **Voir aussi:** [Composants](/guide/components.html)
@@ -148,11 +148,11 @@ type: api
 
 - **Usage:**
 
-  Différer le rappel à exécuter après le prochain cycle de mise à jour du DOM. Utilisez-le immédiatement après que vous ayez changé certaines données pour attendre la mise à jour du DOM.
+  Différer le rappel à exécuter après le prochain cycle de mise à jour du DOM. Utilisez-le immédiatement après avoir changé certaines données pour attendre la mise à jour du DOM.
 
   ``` js
   // modifier la donnée
-  vm.msg = 'Hello'
+  vm.msg = 'Bonjour'
   // DOM pas encore mis à jour
   Vue.nextTick(function () {
     // DOM mis à jour
@@ -196,7 +196,7 @@ type: api
 
 - **Usage:**
 
-  Déclarer ou récupérer une directive globable
+  Déclarer ou récupérer une directive globale
 
   ``` js
   // déclaration
@@ -207,12 +207,12 @@ type: api
   })
 
   // déclaration (une fonction simple de directive)
-  Vue.directive('my-directive', function () {
-    // this will be called as `update`
+  Vue.directive('ma-directive', function () {
+    // sera considéré comme 'update'
   })
 
   // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
-  var myDirective = Vue.directive('my-directive')
+  var myDirective = Vue.directive('ma-directive')
   ```
 
 - **Voir aussi:** [Directives personnalisées](/guide/custom-directive.html)
@@ -229,14 +229,14 @@ type: api
 
   ``` js
   // déclaration
-  Vue.elementDirective('my-element', {
+  Vue.elementDirective('mon-element', {
     bind: function () {},
     // les directives d'élément ne possède pas de `update`
     unbind: function () {}
   })
 
   // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
-  var myDirective = Vue.elementDirective('my-element')
+  var maDirective = Vue.elementDirective('mon-element')
   ```
 
 - **Voir aussi:** [Directives d'Élément](/guide/custom-directive.html#Element-Directives)
@@ -253,18 +253,18 @@ type: api
 
   ``` js
   // déclaration
-  Vue.filter('my-filter', function (value) {
+  Vue.filter('mon-filtre', function (valeur) {
     // retour la valeur traitée
   })
 
-  // filtre en lecture/écriture (two-way)
-  Vue.filter('my-filter', {
+  // filtre en lecture/écriture (dans les deux sens)
+  Vue.filter('mon-filtre', {
     read: function () {},
     write: function () {}
   })
 
   // récupération, retourne le filtre si celui ci est préalablement déclaré
-  var myFilter = Vue.filter('my-filter')
+  var monFilter = Vue.filter('mon-filtre')
   ```
 
 - **Voir aussi:** [Filtres personnalisés](/guide/custom-filter.html)
@@ -281,13 +281,13 @@ type: api
 
   ``` js
   // déclarer un constructeur étendu
-  Vue.component('my-component', Vue.extend({ /* ... */ }))
+  Vue.component('mon-composant', Vue.extend({ /* ... */ }))
 
   // déclarer un objet d'options (appelle automatiquement Vue.extend)
-  Vue.component('my-component', { /* ... */ })
+  Vue.component('mon-composant', { /* ... */ })
 
   // récupérer un composant déclaré (retourne toujours le constructeur)
-  var MyComponent = Vue.component('my-component')
+  var MonComposant = Vue.component('mon-composant')
   ```
 
 - **Voir aussi:** [Composants](/guide/components.html).
@@ -327,10 +327,10 @@ type: api
 
   ``` js
   // déclaration
-  Vue.partial('my-partial', '<div>Hi</div>')
+  Vue.partial('mon-partiel', '<div>Bonjour</div>')
 
   // récupération du fragment de chaine déclaré
-  var myPartial = Vue.partial('my-partial')
+  var monPartiel = Vue.partial('mon-partiel')
   ```
 
 - **Voir aussi:** [Elements spéciaux - &lt;partial&gt;](#partial).
@@ -354,7 +354,7 @@ type: api
 
 - **Usage:**
 
-  Appliquer une mixin globalement. Cela affecte toutes les instances Vue précédemment créées. Cela peut être utilisé par les auteurs du plugin pour injecter un comportement personnalisé dans les composants. **Pas recommandé dans le code d'application**.
+  Appliquer une mixin globalement. Cela affecte toutes les instances Vue précédemment créées. Cela peut être utilisé par les auteurs du plugin pour injecter un comportement personnalisé dans les composants. **Non recommandé dans le code d'application**.
 
 - **Voir aussi:** [Mixins Globales](/guide/mixins.html#Global-Mixin)
 
@@ -372,7 +372,7 @@ type: api
 
   Une fois que l'instance est créée, l'objet de données d'origine est accessible avec `vm.$data`. L'instance de Vue permet également l'accès direct à toutes les propriétés figurant sur l'objet de données.
 
-  Les propriétés prefixées par `_` ou `$` **ne seront pas** accessibles directement depuis l'instance de Vue parce qu'ils peuvent entrer en conflit avec les propriétés internes de Vue et les méthodes de l'API. Vous devez y accéder avec `vm.$data._property`.
+  Les propriétés prefixées par `_` ou `$` **ne seront pas** accessibles directement depuis l'instance de Vue parce qu'elles peuvent entrer en conflit avec les propriétés internes de Vue et les méthodes de l'API. Vous devez y accéder avec `vm.$data._property`.
 
   Lors de la définition d'un **composant**, `data` doit être déclarée comme une fonction qui renvoie l'objet initial de données, car il y aura de nombreuses instances créées en utilisant la même définition. Si nous utilisons encore un objet clair pour `data`, ce même objet sera **partagé par référence** avec toutes les instances créées! En fournissant `data` comme une fonction, chaque fois qu'une nouvelle instance est créée, nous pouvons simplement appeler cette fonction pour retourner une nouvelle copie des données initiales.
 
@@ -406,7 +406,7 @@ type: api
 
 - **Détails:**
 
-  C'est une liste d'attributs qui recevoivent des données provenant du composant parent. Cette propriété a une syntaxe simple basée sur un tableau et une syntaxe alternative basée sur un objet qui permet des configurations avancées telles que la vérification de type, validation personnalisée et les valeurs par défaut.
+  C'est une liste d'attributs qui reçoivent des données provenant du composant parent. Cette propriété a une syntaxe simple basée sur un tableau et une syntaxe alternative basée sur un objet qui permet des configurations avancées telles que la vérification de type, la validation personnalisée et les valeurs par défaut.
 
 - **Exemple:**
 
@@ -446,11 +446,11 @@ type: api
   var vm = new Vue({
     data: { a: 1 },
     computed: {
-      // lecture seulement, on a besoin uniquement d'un fonction
+      // lecture seulement, on a uniquement besoin d'une fonction
       aDouble: function () {
         return this.a * 2
       },
-      // dans le cas de lecture et ecriture (getter et setter)
+      // dans le cas de lecture et écriture (getter et setter)
       aPlus: {
         get: function () {
           return this.a + 1
