@@ -1,6 +1,6 @@
 ---
 title: Graphique SVG
-type: examples
+type: exemples
 order: 5
 ---
 

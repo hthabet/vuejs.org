@@ -1,6 +1,6 @@
 ---
 title: Composant Modal
-type: examples
+type: exemples
 order: 6
 ---
 

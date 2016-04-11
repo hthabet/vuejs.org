@@ -1,6 +1,6 @@
 ---
 title: GitHub Commits
-type: examples
+type: exemples
 order: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Directive personnalisée
-type: examples
+type: exemples
 order: 8
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: TodoMVC
-type: examples
+type: exemples
 order: 9
 ---
 

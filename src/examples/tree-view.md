@@ -1,6 +1,6 @@
 ---
 title: Liste arborescente
-type: examples
+type: exemples
 order: 4
 ---
 

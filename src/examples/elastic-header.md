@@ -1,6 +1,6 @@
 ---
 title: Entête élastique
-type: examples
+type: exemples
 order: 7
 ---
 

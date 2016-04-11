@@ -1,6 +1,6 @@
 ---
 title: Composant Tableau
-type: examples
+type: exemples
 order: 3
 ---
 
