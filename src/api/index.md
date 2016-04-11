@@ -438,7 +438,7 @@ type: api
 
 - **Détails:**
 
-  C'est les propriétés calculées disponibles dans l'instance de Vue. Elles peuvent être lues (getters) ou définies (setters) en utilisant `this`, étant le contexte lié automatiquement à l'instance de Vue.
+  Ce sont les propriétés calculées disponibles dans l'instance de Vue. Elles peuvent être lues (getters) ou définies (setters) en utilisant `this`, ce dernier étant le contexte automatiquement lié à l'instance de Vue.
 
 - **Exemple:**
 
@@ -477,7 +477,7 @@ type: api
 
 - **Détails:**
 
-  C'est les méthodes disponibles dans l'instance de Vue. Vous pouvez accéder à ces méthodes directement depuis l'instance de Vue, ou les utiliser dans les expressions des directives. Toutes les méthodes ont leur context `this` automatiquement lié à l'instance de Vue.
+  Ce sont les méthodes disponibles dans l'instance de Vue. Vous pouvez accéder à ces méthodes directement depuis l'instance de Vue ou les utiliser dans les expressions des directives. Toutes les méthodes ont leur contexte `this` automatiquement lié à l'instance de Vue.
 
 - **Exemple:**
 
@@ -589,7 +589,7 @@ type: api
   })
   ```
 
-  Will result in:
+  Le résultera est:
 
   ``` html
   <p>remplacé</p>
@@ -804,22 +804,22 @@ type: api
   var vm = new Vue({
     events: {
       'hook:created': function () {
-        console.log('created!')
+        console.log('créé!')
       },
-      greeting: function (msg) {
+      salutation: function (msg) {
         console.log(msg)
       },
       // La valeur peut aussi être le nom d'une méthode
-      bye: 'sayGoodbye'
+      aurevoir: 'disAurevoir'
     },
     methods: {
-      sayGoodbye: function () {
-        console.log('goodbye!')
+      disAurevoir: function () {
+        console.log('Au revoir!')
       }
     }
-  }) // -> created!
-  vm.$emit('greeting', 'hi!') // -> hi!
-  vm.$emit('bye')             // -> goodbye!
+  }) // -> créé!
+  vm.$emit('salutation', 'Salut!') // -> Salut!
+  vm.$emit('aurevoir')             // -> Au revoir!
   ```
 
 - **Voir aussi:**
@@ -860,7 +860,7 @@ type: api
 
 - **Détails:**
 
-  Permet au composant de s'invoquer récusirvement dans son modèle. Notez que lorsqu'un composant est déclaré au niveau global avec `Vue.component()`, l'identifiant global est automatiquement défini comme son nom.
+  Permet au composant de s'invoquer récursivement dans son modèle. Notez que lorsqu'un composant est déclaré au niveau global avec `Vue.component()`, l'identifiant global est automatiquement défini comme son nom.
 
   Un autre avantage de spécifier une option `name` est l'inspection de la console. Lors de l'inspection d'un composant étendu de Vue dans la console, le nom du constructeur par défaut est `VueComponent`, ce qui n'est pas très significatif. En définissant l'option `name` (option facultative) dans `Vue.extend()`, vous obtiendrez un meilleur retour d'inspection afin que vous sachiez quel composant vous observez. La chaîne sera en "camelCase" et sera utilisé comme le nom du constructeur du composant.
 
@@ -891,7 +891,7 @@ type: api
 
 - **Détails:**
 
-  C'est l'objet de données observé par l'instance de Vue. Vous pouvez l'échanger avec un nouvel objet. L'instance Vue redirecte l'accès aux propriétés sur son objet de données.
+  C'est l'objet de données observé par l'instance de Vue. Vous pouvez l'échanger avec un nouvel objet. L'instance Vue redirige l'accès aux propriétés sur son objet de données.
 
 ### vm.$el
 
@@ -911,7 +911,7 @@ type: api
 
 - **Détails:**
 
-  C'est les options d'instanciation utilisées pour l'instance de Vue actuelle. Ceci est utile lorsque vous souhaitez inclure des propriétés personnalisées dans les options:
+  Ce sont les options d'instanciation utilisées pour l'instance de Vue actuelle. Ceci est utile lorsque vous souhaitez inclure des propriétés personnalisées dans les options:
 
   ``` js
   new Vue({
@@ -930,7 +930,7 @@ type: api
 
 - **Détails:**
 
-  C'est l'instance parente. si l'instance actuelle en a une.
+  C'est l'instance parente, quand l'instance actuelle en a une.
 
 ### vm.$root
 
@@ -1239,23 +1239,23 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
   ``` js
   // créer une arborescence d'instances de Vue
   var parent = new Vue()
-  var child1 = new Vue({ parent: parent })
-  var child2 = new Vue({ parent: child1 })
+  var enfant1 = new Vue({ parent: parent })
+  var enfant2 = new Vue({ parent: enfant1 })
 
   parent.$on('test', function () {
-    console.log('parent notified')
+    console.log('parent notifié')
   })
-  child1.$on('test', function () {
-    console.log('child1 notified')
+  enfant1.$on('test', function () {
+    console.log('enfant1 notifié')
   })
-  child2.$on('test', function () {
-    console.log('child2 notified')
+  enfant2.$on('test', function () {
+    console.log('enfant2 notifié')
   })
 
-  child2.$dispatch('test')
-  // -> "child2 notified"
-  // -> "child1 notified"
-  // le parent n'est pas notifié, parce que child1 n'a pas retourné 
+  enfant2.$dispatch('test')
+  // -> "enfant2 notifié"
+  // -> "enfant1 notifié"
+  // le parent n'est pas notifié, parce qu'enfant1 n'a pas retourné 
   // 'true' dans sa fonction de rappel
   ```
 
@@ -1269,33 +1269,32 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Usage:**
 
-  Broadcast an event that propagates downward to all descendants of the current instance. Since the descendants expand into multiple sub-trees, the event propagation will follow many different "paths". The propagation for each path will stop when a listener callback is fired along that path, unless the callback returns `true`.
   Diffuse un événement qui se propage vers le bas pour tous les descendants de l'instance actuelle. Étant donné que les descendants s'étendent en plusieurs sous-arbres, la propagation de l'événement suivra plusieurs "chemins" différents. La propagation pour chaque chemin s'arrêtera quand une fonction de rappel de l'écouteur est déclenchée le long de ce chemin, à moins qu'elle retourne `true`.
 
 - **Exemple:**
 
   ``` js
   var parent = new Vue()
-  // child1 et child2 sont au même niveau hiérarchique
-  var child1 = new Vue({ parent: parent })
-  var child2 = new Vue({ parent: parent })
-  // child3 est l'enfant de child2
-  var child3 = new Vue({ parent: child2 })
+  // enfant1 et enfant2 sont au même niveau hiérarchique
+  var enfant1 = new Vue({ parent: parent })
+  var enfant2 = new Vue({ parent: parent })
+  // enfant3 est l'enfant de enfant2
+  var enfant3 = new Vue({ parent: enfant2 })
 
-  child1.$on('test', function () {
-    console.log('child1 notified')
+  enfant1.$on('test', function () {
+    console.log('enfant1 notifié')
   })
-  child2.$on('test', function () {
-    console.log('child2 notified')
+  enfant2.$on('test', function () {
+    console.log('enfant2 notifié')
   })
-  child3.$on('test', function () {
-    console.log('child3 notified')
+  enfant3.$on('test', function () {
+    console.log('enfant3 notifié')
   })
 
   parent.$broadcast('test')
-  // -> "child1 notified"
-  // -> "child2 notified"
-  // child3 n'est pas notifié, parce que child2 n'a pas retourné
+  // -> "enfant1 notifié"
+  // -> "enfant2 notifié"
+  // enfant3 n'est pas notifié, parce que enfant2 n'a pas retourné
   // 'true' dans sa fonction de rappel
   ```
 
@@ -1364,14 +1363,14 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
     // ...
     methods: {
       // ...
-      example: function () {
+      exemple: function () {
         // changement de données
-        this.message = 'changed'
+        this.message = 'changé'
         // DOM n'est pas encore mis à jour
         this.$nextTick(function () {
           // DOM est maintenant mis à jour
           // `this` est lié à l'instance actuelle
-          this.doSomethingElse()
+          this.faisAutreChose()
         })
       }
     }
@@ -1403,7 +1402,7 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
   ``` js
   var MyComponent = Vue.extend({
-    template: '<div>Hello!</div>'
+    template: '<div>Bonjour !</div>'
   })
 
   // créer et attacher à #app (remplacera <div id="#app"></div>)
@@ -1457,7 +1456,7 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Détails:**
 
-  Met à jour le `innerHTML` de l'élément. Le contenu est inséré en tant que HTML brut - les liaisons de données sont ignorées. Si vous avez besoin de réutiliser des parties de modèle, vous devez utiliser [partials](#partial).
+  Met à jour le `innerHTML` de l'élément. Le contenu est inséré en tant que HTML brut - les liaisons de données sont ignorées. Si vous avez besoin de réutiliser des parties de modèle, vous devez utiliser les [partials](#partial).
 
   En interne, les interpolations `{% raw %}{{ Mustache }}{% endraw %}` sont aussi compilées comme une directive `v-html` utilisant des noeuds d'ancrage. La forme de la directive exige un élément d'enveloppement, mais offre des performances légèrement meilleures et évite FOUC (Flash of Uncompiled Content - Flashage du contenu non compilé).
 
@@ -1487,8 +1486,6 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Usage:**
 
-  Toggle's the element's `display` CSS property based on the truthy-ness of the expression value. Triggers transitions if present.
-
   Change la propriété CSS `display` de l'élément sur la base de la valeur d'expression `true` ou `false`. Déclenche les transitions si elles sont présentes.
 
 - **Voir aussi:** [Rendu condionnel - v-show](/guide/conditional.html#v-show)
@@ -1505,10 +1502,10 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
   ``` html
   <div v-if="Math.random() > 0.5">
-    Sorry
+    Désolé
   </div>
   <div v-else>
-    Not sorry
+    Pas désolé
   </div>
   ```
 
