@@ -8,61 +8,61 @@ min_size: "72.92"
 gz_size: "25.10"
 ---
 
-### Compatibility Note
+### Compatibilité
 
-Vue.js does **not** support IE8 and below, because Vue.js uses ECMAScript 5 features that are un-shimmable in IE8. However Vue.js supports all [ECMAScript 5 compliant browsers](http://caniuse.com/#feat=es5).
+Vue.js **ne supporte pas** IE8 et les versions antérieures, parce que Vue.js utilise les fonctionnalités ECMAScript 5 qui ne sont pas "shimmables" dans IE8. Cela dit, Vue.js supporte tous les [navigateurs compatibles ECMAScript 5](http://caniuse.com/#feat=es5).
 
-### Release Notes
+### Note de version
 
-Detailed release notes for each version are available on [GitHub](https://github.com/vuejs/vue/releases).
+Les notes de version détaillées pour chaque version sont disponibles sur [GitHub](https://github.com/vuejs/vue/releases).
 
-## Standalone
+## Autonome (Standalone)
 
-Simply download and include with a script tag. `Vue` will be registered as a global variable. **Pro tip: don't use the minified version during development. you will miss out all the nice warnings for common mistakes.**
+Il suffit de télécharger et d'inclure une balise `<script>`. `Vue` sera déclaré comme une variable globale. **Conseil pro: n'utilisez pas la version minifiée pendant le développement car vous ne bénéficierez pas des avertissements pour les erreurs courantes.**
 
 <div id="downloads">
-<a class="button" href="/js/vue.js" download>Development Version</a><span class="light info">With full warnings and debug mode</span>
+<a class="button" href="/js/vue.js" download>Version de dév</a><span class="light info">Avec tous les avertissements et le mode de débogage</span>
 
-<a class="button" href="/js/vue.min.js" download>Production Version</a><span class="light info">Warnings stripped, {{gz_size}}kb min+gzip</span>
+<a class="button" href="/js/vue.min.js" download>Version de production</a><span class="light info">Avertissements retirés, {{gz_size}}ko min+gzip</span>
 </div>
 
 ### CDN
 
-Available on [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.min.js) or [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.min.js) (takes some time to sync so the latest version might not be available yet).
+Disponible sur [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.min.js) or [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.min.js) (La synchronisation de la dernière version peut prendre du temps et cette dernière peut ne pas être encore disponible).
 
-### CSP-compliant build
+### Build conforme à CSP 
 
-Some environments, such as Google Chrome Apps, enforces Content Security Policy (CSP) and does not allow the use of `new Function()` for evaluating expressions. In these cases you can use the [CSP-compliant build](https://github.com/vuejs/vue/tree/csp/dist) instead.
+Certains environnements, tels que les Applications de Google Chrome, font respecter la politique de sécurité du contenu (Content Security Policy - CSP) et ne permettent pas l'utilisation de `new function()` pour évaluer les expressions. Dans ce cas, vous pouvez utiliser le [build conforme à CSP] (https://github.com/vuejs/vue/tree/csp/dist).
 
 ## NPM
 
-NPM is the recommended installation method when building large scale apps with Vue.js. It pairs nicely with a CommonJS module bundler such as [Webpack](http://webpack.github.io/) or [Browserify](http://browserify.org/). Vue.js also provides accompanying tools for authoring [Single File Components](application.html#Single-File-Components).
+NPM est la méthode d'installation recommandée lors du développement de larges applications à grande échelle avec Vue.js. Il s'associe bien avec les modules d'empaquetage CommonJS tels que [Webpack](http://webpack.github.io/) ou [Browserify](http://browserify.org/). Vue.js fournit également des outils d'accompagnement pour la rédaction [Composants à fichier unique](application.html#Single-File-Components).
 
 ``` bash
-# latest stable
+# dernière version stable
 $ npm install vue
-# latest stable + CSP-compliant
+# dernière version stable + CSP-conforme
 $ npm install vue@csp
 ```
 
 ## CLI
 
-Vue.js provides an [official CLI](https://github.com/vuejs/vue-cli) for quickly scaffolding ambitious Single Page Applications. It provides battery-included build setups for a modern frontend workflow. It takes only a few minutes to get up and running with hot-reload, lint-on-save and production-ready builds:
+Vue.js fournit une [Interface en Ligne de Commande officielle] (https://github.com/vuejs/vue-cli) pour mettre en place rapidement la base d'une application SPA (Singe Page Application). Vue.js fournit également une série de configurations pour un workflow de frontend moderne. Ça ne prend que quelques minutes démarrer le développement incluant: rechargement et lint du code lors de la sauvegarde et la génération d'un build prêt à la production:
 
 ``` bash
-# install vue-cli
+# installer vue-cli
 $ npm install -g vue-cli
-# create a new project using the "webpack" boilerplate
+# créer un nouveau projet avec le kit de démarrage "webpack"
 $ vue init webpack my-project
-# install dependencies and go!
+# installer des dependances et c'est parti!
 $ cd my-project
 $ npm install
 $ npm run dev
 ```
 
-## Dev Build
+## Build de développement 
 
-**Important**: the CommonJS bundle distributed on NPM (`vue.common.js`) is only checked-in during releases on the `master` branch, so the file in the `dev` branch is the same as the stable release. To use Vue from the latest source code on GitHub, you will have to build it yourself!
+**Important**: le paquet CommonJS distribué sur NPM (`vue.common.js`) est uniquement vérifié par rapport aux versions sur la branche `master`, de sorte que le fichier dans la branche `dev` soit le même que celui de la version stable. Pour utiliser la dernière version du code source de Vue.js sur GitHub, vous devrez le construire vous-même!
 
 ``` bash
 git clone https://github.com/vuejs/vue.git node_modules/vue
@@ -74,10 +74,10 @@ npm run build
 ## Bower
 
 ``` bash
-# latest stable
+# dernière version stable
 $ bower install vue
 ```
 
-## AMD Module Loaders
+## Chargeurs de module AMD
 
-The standalone downloads or versions installed via Bower are wrapped with UMD so they can be used directly as an AMD module.
+Les téléchargements autonomes (standalones) ou les versions installées via Bower sont enveloppées avec UMD afin qu'ils puissent être utilisés directement comme un module AMD.

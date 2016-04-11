@@ -1,12 +1,12 @@
 ---
-title: Getting Started
+title: Commencer
 type: guide
 order: 1
 ---
 
-Let's start with a quick tour of Vue's data binding features. If you are more interested in a high-level overview first, check out this [blog post](http://blog.evanyou.me/2015/10/25/vuejs-re-introduction/).
+Commençons par un tour rapide concernant les caractéristiques de data binding dans Vue.js. Si vous êtes intéressé par des exemples plus avancés, Lisez cet [article](http://blog.evanyou.me/2015/10/25/vuejs-re-introduction/).
 
-The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/yyx990803/okv0rgrk/). Feel free to open it in another tab and follow along as we go through some basic examples. If you prefer downloading / installing from a package manager, check out the [Installation](/guide/installation.html) page.
+La façon la plus facile d'essayer Vue.js est d'utiliser l'[Exemple Hello World sur JSFiddle](https://jsfiddle.net/yyx990803/okv0rgrk/). Vous êtes libre de l'ouvrir dans un autre onglet et de suivre pendant que nous montrions quelques exemples de base. Si vous préférez le téléchargement et installation à partir d'un gestionnaire de paquets, consultez la rubrique [Installation](/guide/installation.html).
 
 ### Hello World
 
@@ -19,7 +19,7 @@ The easiest way to try out Vue.js is using the [JSFiddle Hello World example](ht
 new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   }
 })
 ```
@@ -31,13 +31,13 @@ new Vue({
 new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   }
 })
 </script>
 {% endraw %}
 
-### Two-way Binding
+### Two-way Binding (Liaison de modèle de donnée à deux sens)
 
 ``` html
 <div id="app">
@@ -49,7 +49,7 @@ new Vue({
 new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   }
 })
 ```
@@ -62,13 +62,13 @@ new Vue({
 new Vue({
   el: '#app2',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   }
 })
 </script>
 {% endraw %}
 
-### Render a List
+### Générer une liste
 
 ``` html
 <div id="app">
@@ -84,9 +84,9 @@ new Vue({
   el: '#app',
   data: {
     todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue.js' },
-      { text: 'Build Something Awesome' }
+      { text: 'Apprendre JavaScript' },
+      { text: 'Apprendre Vue.js' },
+      { text: 'Construire quelque chose de génial!' }
     ]
   }
 })
@@ -104,28 +104,28 @@ new Vue({
   el: '#app3',
   data: {
     todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue.js' },
-      { text: 'Build Something Awesome' }
+      { text: 'Apprendre JavaScript' },
+      { text: 'Apprendre Vue.js' },
+      { text: 'Construire quelque chose de génial!' }
     ]
   }
 })
 </script>
 {% endraw %}
 
-### Handle User Input
+### Gérer les données saisies par l'utilisateur
 
 ``` html
 <div id="app">
   <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Reverse Message</button>
+  <button v-on:click="reverseMessage">Inverser le message</button>
 </div>
 ```
 ``` js
 new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   },
   methods: {
     reverseMessage: function () {
@@ -137,13 +137,13 @@ new Vue({
 {% raw %}
 <div id="app4" class="demo">
   <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Reverse Message</button>
+  <button v-on:click="reverseMessage">Inverser le message</button>
 </div>
 <script>
 new Vue({
   el: '#app4',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Bonjour Vue.js!'
   },
   methods: {
     reverseMessage: function () {
@@ -154,7 +154,7 @@ new Vue({
 </script>
 {% endraw %}
 
-### All Together Now
+### Maintenant, le tout ensemble:
 
 ``` html
 <div id="app">
@@ -173,7 +173,7 @@ new Vue({
   data: {
     newTodo: '',
     todos: [
-      { text: 'Add some todos' }
+      { text: 'Ajouter des tâches' }
     ]
   },
   methods: {
@@ -206,7 +206,7 @@ new Vue({
   data: {
     newTodo: '',
     todos: [
-      { text: 'Add some todos' }
+      { text: 'Ajouter des tâches' }
     ]
   },
   methods: {
@@ -225,4 +225,4 @@ new Vue({
 </script>
 {% endraw %}
 
-I hope this gives you a basic idea of how Vue.js works. I'm sure you also have many questions now - read along, and we will cover them in the rest of the guide.
+J'espère que tout ceci vous donne une idée de base de la façon dont Vue.js fonctionne. Maintenant, je suis sûr que vous avez aussi beaucoup de questions - continuer à lire, nous allons les couvrir dans le reste du guide.
