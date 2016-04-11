@@ -22,9 +22,9 @@ type: api
 
   1. affichera les traces d'appels pour tous les avertissements.
 
-  2. Fera que tous les nœuds d'ancrage seront visibles dans le DOM sous forme de commentaire. Cela rend plus facile l'inspection de la structure du résultat rendu.
+  2. Fera en sorte que tous les nœuds d'ancrage soient visibles dans le DOM sous forme de commentaires. Cela rend plus facile l'inspection de la structure du résultat rendu.
 
-  <p class="tip">Le mode débogage est disponible uniquement dans le build de développement.</p>
+  <p class="tip">Le mode débogage est uniquement disponible dans le build de développement.</p>
 
 ### delimiters
 
@@ -82,7 +82,7 @@ type: api
   Vue.config.async = false
   ```
 
-  Lorsque le mode async n'est pas actif, Vue effectuera toutes les mises à jour du DOM de manière synchrone dès la détection de changement de données. Cela peut faciliter le débogage dans certains scénarios, mais pourrait également provoquer une dégradation des performances et affecter l'ordre dans lequel les fonctions de retour d'observation sont appelées. **`async: false` n'est pas recommandé en production.**
+  Lorsque le mode async n'est pas actif, Vue effectuera toutes les mises à jour du DOM de manière synchrone dès la détection d'un changement de données. Cela peut faciliter le débogage dans certains scénarios, mais pourrait également provoquer une dégradation des performances et affecter l'ordre dans lequel les fonctions de retour d'observation sont appelées. **`async: false` n'est pas recommandé en production.**
 
 ### devtools
 
@@ -119,7 +119,7 @@ type: api
   ``` js
   // créer un contructeur réutilisable
   var Profile = Vue.extend({
-    template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>'
+    template: '<p>{{firstName}} {{lastName}} alias {{alias}}</p>'
   })
   // créer une instance de profil
   var profile = new Profile({
@@ -136,7 +136,7 @@ type: api
   Le résultat sera:
 
   ``` html
-  <p>Walter White aka Heisenberg</p>
+  <p>Walter White alias Heisenberg</p>
   ```
 
 - **Voir aussi:** [Composants](/guide/components.html)
@@ -148,11 +148,11 @@ type: api
 
 - **Usage:**
 
-  Différer le rappel à exécuter après le prochain cycle de mise à jour du DOM. Utilisez-le immédiatement après que vous ayez changé certaines données pour attendre la mise à jour du DOM.
+  Différer le rappel à exécuter après le prochain cycle de mise à jour du DOM. Utilisez-le immédiatement après avoir changé certaines données pour attendre la mise à jour du DOM.
 
   ``` js
   // modifier la donnée
-  vm.msg = 'Hello'
+  vm.msg = 'Bonjour'
   // DOM pas encore mis à jour
   Vue.nextTick(function () {
     // DOM mis à jour
@@ -196,7 +196,7 @@ type: api
 
 - **Usage:**
 
-  Déclarer ou récupérer une directive globable
+  Déclarer ou récupérer une directive globale
 
   ``` js
   // déclaration
@@ -207,12 +207,12 @@ type: api
   })
 
   // déclaration (une fonction simple de directive)
-  Vue.directive('my-directive', function () {
-    // this will be called as `update`
+  Vue.directive('ma-directive', function () {
+    // sera considéré comme 'update'
   })
 
   // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
-  var myDirective = Vue.directive('my-directive')
+  var myDirective = Vue.directive('ma-directive')
   ```
 
 - **Voir aussi:** [Directives personnalisées](/guide/custom-directive.html)
@@ -229,14 +229,14 @@ type: api
 
   ``` js
   // déclaration
-  Vue.elementDirective('my-element', {
+  Vue.elementDirective('mon-element', {
     bind: function () {},
     // les directives d'élément ne possède pas de `update`
     unbind: function () {}
   })
 
   // récupération, retourne la définition de la directive si celle ci est préalablement déclarée
-  var myDirective = Vue.elementDirective('my-element')
+  var maDirective = Vue.elementDirective('mon-element')
   ```
 
 - **Voir aussi:** [Directives d'Élément](/guide/custom-directive.html#Element-Directives)
@@ -253,18 +253,18 @@ type: api
 
   ``` js
   // déclaration
-  Vue.filter('my-filter', function (value) {
+  Vue.filter('mon-filtre', function (valeur) {
     // retour la valeur traitée
   })
 
-  // filtre en lecture/écriture (two-way)
-  Vue.filter('my-filter', {
+  // filtre en lecture/écriture (dans les deux sens)
+  Vue.filter('mon-filtre', {
     read: function () {},
     write: function () {}
   })
 
   // récupération, retourne le filtre si celui ci est préalablement déclaré
-  var myFilter = Vue.filter('my-filter')
+  var monFilter = Vue.filter('mon-filtre')
   ```
 
 - **Voir aussi:** [Filtres personnalisés](/guide/custom-filter.html)
@@ -281,13 +281,13 @@ type: api
 
   ``` js
   // déclarer un constructeur étendu
-  Vue.component('my-component', Vue.extend({ /* ... */ }))
+  Vue.component('mon-composant', Vue.extend({ /* ... */ }))
 
   // déclarer un objet d'options (appelle automatiquement Vue.extend)
-  Vue.component('my-component', { /* ... */ })
+  Vue.component('mon-composant', { /* ... */ })
 
   // récupérer un composant déclaré (retourne toujours le constructeur)
-  var MyComponent = Vue.component('my-component')
+  var MonComposant = Vue.component('mon-composant')
   ```
 
 - **Voir aussi:** [Composants](/guide/components.html).
@@ -327,10 +327,10 @@ type: api
 
   ``` js
   // déclaration
-  Vue.partial('my-partial', '<div>Hi</div>')
+  Vue.partial('mon-partiel', '<div>Bonjour</div>')
 
   // récupération du fragment de chaine déclaré
-  var myPartial = Vue.partial('my-partial')
+  var monPartiel = Vue.partial('mon-partiel')
   ```
 
 - **Voir aussi:** [Elements spéciaux - &lt;partial&gt;](#partial).
@@ -354,7 +354,7 @@ type: api
 
 - **Usage:**
 
-  Appliquer une mixin globalement. Cela affecte toutes les instances Vue précédemment créées. Cela peut être utilisé par les auteurs du plugin pour injecter un comportement personnalisé dans les composants. **Pas recommandé dans le code d'application**.
+  Appliquer une mixin globalement. Cela affecte toutes les instances Vue précédemment créées. Cela peut être utilisé par les auteurs du plugin pour injecter un comportement personnalisé dans les composants. **Non recommandé dans le code d'application**.
 
 - **Voir aussi:** [Mixins Globales](/guide/mixins.html#Global-Mixin)
 
@@ -372,7 +372,7 @@ type: api
 
   Une fois que l'instance est créée, l'objet de données d'origine est accessible avec `vm.$data`. L'instance de Vue permet également l'accès direct à toutes les propriétés figurant sur l'objet de données.
 
-  Les propriétés prefixées par `_` ou `$` **ne seront pas** accessibles directement depuis l'instance de Vue parce qu'ils peuvent entrer en conflit avec les propriétés internes de Vue et les méthodes de l'API. Vous devez y accéder avec `vm.$data._property`.
+  Les propriétés prefixées par `_` ou `$` **ne seront pas** accessibles directement depuis l'instance de Vue parce qu'elles peuvent entrer en conflit avec les propriétés internes de Vue et les méthodes de l'API. Vous devez y accéder avec `vm.$data._property`.
 
   Lors de la définition d'un **composant**, `data` doit être déclarée comme une fonction qui renvoie l'objet initial de données, car il y aura de nombreuses instances créées en utilisant la même définition. Si nous utilisons encore un objet clair pour `data`, ce même objet sera **partagé par référence** avec toutes les instances créées! En fournissant `data` comme une fonction, chaque fois qu'une nouvelle instance est créée, nous pouvons simplement appeler cette fonction pour retourner une nouvelle copie des données initiales.
 
@@ -406,7 +406,7 @@ type: api
 
 - **Détails:**
 
-  C'est une liste d'attributs qui recevoivent des données provenant du composant parent. Cette propriété a une syntaxe simple basée sur un tableau et une syntaxe alternative basée sur un objet qui permet des configurations avancées telles que la vérification de type, validation personnalisée et les valeurs par défaut.
+  C'est une liste d'attributs qui reçoivent des données provenant du composant parent. Cette propriété a une syntaxe simple basée sur un tableau et une syntaxe alternative basée sur un objet qui permet des configurations avancées telles que la vérification de type, la validation personnalisée et les valeurs par défaut.
 
 - **Exemple:**
 
@@ -438,7 +438,7 @@ type: api
 
 - **Détails:**
 
-  C'est les propriétés calculées disponibles dans l'instance de Vue. Elles peuvent être lues (getters) ou définies (setters) en utilisant `this`, étant le contexte lié automatiquement à l'instance de Vue.
+  Ce sont les propriétés calculées disponibles dans l'instance de Vue. Elles peuvent être lues (getters) ou définies (setters) en utilisant `this`, ce dernier étant le contexte automatiquement lié à l'instance de Vue.
 
 - **Exemple:**
 
@@ -446,11 +446,11 @@ type: api
   var vm = new Vue({
     data: { a: 1 },
     computed: {
-      // lecture seulement, on a besoin uniquement d'un fonction
+      // lecture seulement, on a uniquement besoin d'une fonction
       aDouble: function () {
         return this.a * 2
       },
-      // dans le cas de lecture et ecriture (getter et setter)
+      // dans le cas de lecture et écriture (getter et setter)
       aPlus: {
         get: function () {
           return this.a + 1
@@ -477,7 +477,7 @@ type: api
 
 - **Détails:**
 
-  C'est les méthodes disponibles dans l'instance de Vue. Vous pouvez accéder à ces méthodes directement depuis l'instance de Vue, ou les utiliser dans les expressions des directives. Toutes les méthodes ont leur context `this` automatiquement lié à l'instance de Vue.
+  Ce sont les méthodes disponibles dans l'instance de Vue. Vous pouvez accéder à ces méthodes directement depuis l'instance de Vue ou les utiliser dans les expressions des directives. Toutes les méthodes ont leur contexte `this` automatiquement lié à l'instance de Vue.
 
 - **Exemple:**
 
@@ -589,7 +589,7 @@ type: api
   })
   ```
 
-  Will result in:
+  Le résultera est:
 
   ``` html
   <p>remplacé</p>
@@ -803,22 +803,22 @@ type: api
   var vm = new Vue({
     events: {
       'hook:created': function () {
-        console.log('created!')
+        console.log('créé!')
       },
-      greeting: function (msg) {
+      salutation: function (msg) {
         console.log(msg)
       },
       // La valeur peut aussi être le nom d'une méthode
-      bye: 'sayGoodbye'
+      aurevoir: 'disAurevoir'
     },
     methods: {
-      sayGoodbye: function () {
-        console.log('goodbye!')
+      disAurevoir: function () {
+        console.log('Au revoir!')
       }
     }
-  }) // -> created!
-  vm.$emit('greeting', 'hi!') // -> hi!
-  vm.$emit('bye')             // -> goodbye!
+  }) // -> créé!
+  vm.$emit('salutation', 'Salut!') // -> Salut!
+  vm.$emit('aurevoir')             // -> Au revoir!
   ```
 
 - **Voir aussi:**
@@ -859,7 +859,7 @@ type: api
 
 - **Détails:**
 
-  Permet au composant de s'invoquer récusirvement dans son modèle. Notez que lorsqu'un composant est déclaré au niveau global avec `Vue.component()`, l'identifiant global est automatiquement défini comme son nom.
+  Permet au composant de s'invoquer récursivement dans son modèle. Notez que lorsqu'un composant est déclaré au niveau global avec `Vue.component()`, l'identifiant global est automatiquement défini comme son nom.
 
   Un autre avantage de spécifier une option `name` est l'inspection de la console. Lors de l'inspection d'un composant étendu de Vue dans la console, le nom du constructeur par défaut est `VueComponent`, ce qui n'est pas très significatif. En définissant l'option `name` (option facultative) dans `Vue.extend()`, vous obtiendrez un meilleur retour d'inspection afin que vous sachiez quel composant vous observez. La chaîne sera en "camelCase" et sera utilisé comme le nom du constructeur du composant.
 
@@ -890,7 +890,7 @@ type: api
 
 - **Détails:**
 
-  C'est l'objet de données observé par l'instance de Vue. Vous pouvez l'échanger avec un nouvel objet. L'instance Vue redirecte l'accès aux propriétés sur son objet de données.
+  C'est l'objet de données observé par l'instance de Vue. Vous pouvez l'échanger avec un nouvel objet. L'instance Vue redirige l'accès aux propriétés sur son objet de données.
 
 ### vm.$el
 
@@ -910,7 +910,7 @@ type: api
 
 - **Détails:**
 
-  C'est les options d'instanciation utilisées pour l'instance de Vue actuelle. Ceci est utile lorsque vous souhaitez inclure des propriétés personnalisées dans les options:
+  Ce sont les options d'instanciation utilisées pour l'instance de Vue actuelle. Ceci est utile lorsque vous souhaitez inclure des propriétés personnalisées dans les options:
 
   ``` js
   new Vue({
@@ -929,7 +929,7 @@ type: api
 
 - **Détails:**
 
-  C'est l'instance parente. si l'instance actuelle en a une.
+  C'est l'instance parente, quand l'instance actuelle en a une.
 
 ### vm.$root
 
@@ -1238,23 +1238,23 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
   ``` js
   // créer une arborescence d'instances de Vue
   var parent = new Vue()
-  var child1 = new Vue({ parent: parent })
-  var child2 = new Vue({ parent: child1 })
+  var enfant1 = new Vue({ parent: parent })
+  var enfant2 = new Vue({ parent: enfant1 })
 
   parent.$on('test', function () {
-    console.log('parent notified')
+    console.log('parent notifié')
   })
-  child1.$on('test', function () {
-    console.log('child1 notified')
+  enfant1.$on('test', function () {
+    console.log('enfant1 notifié')
   })
-  child2.$on('test', function () {
-    console.log('child2 notified')
+  enfant2.$on('test', function () {
+    console.log('enfant2 notifié')
   })
 
-  child2.$dispatch('test')
-  // -> "child2 notified"
-  // -> "child1 notified"
-  // le parent n'est pas notifié, parce que child1 n'a pas retourné 
+  enfant2.$dispatch('test')
+  // -> "enfant2 notifié"
+  // -> "enfant1 notifié"
+  // le parent n'est pas notifié, parce qu'enfant1 n'a pas retourné 
   // 'true' dans sa fonction de rappel
   ```
 
@@ -1268,33 +1268,32 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Usage:**
 
-  Broadcast an event that propagates downward to all descendants of the current instance. Since the descendants expand into multiple sub-trees, the event propagation will follow many different "paths". The propagation for each path will stop when a listener callback is fired along that path, unless the callback returns `true`.
   Diffuse un événement qui se propage vers le bas pour tous les descendants de l'instance actuelle. Étant donné que les descendants s'étendent en plusieurs sous-arbres, la propagation de l'événement suivra plusieurs "chemins" différents. La propagation pour chaque chemin s'arrêtera quand une fonction de rappel de l'écouteur est déclenchée le long de ce chemin, à moins qu'elle retourne `true`.
 
 - **Exemple:**
 
   ``` js
   var parent = new Vue()
-  // child1 et child2 sont au même niveau hiérarchique
-  var child1 = new Vue({ parent: parent })
-  var child2 = new Vue({ parent: parent })
-  // child3 est l'enfant de child2
-  var child3 = new Vue({ parent: child2 })
+  // enfant1 et enfant2 sont au même niveau hiérarchique
+  var enfant1 = new Vue({ parent: parent })
+  var enfant2 = new Vue({ parent: parent })
+  // enfant3 est l'enfant de enfant2
+  var enfant3 = new Vue({ parent: enfant2 })
 
-  child1.$on('test', function () {
-    console.log('child1 notified')
+  enfant1.$on('test', function () {
+    console.log('enfant1 notifié')
   })
-  child2.$on('test', function () {
-    console.log('child2 notified')
+  enfant2.$on('test', function () {
+    console.log('enfant2 notifié')
   })
-  child3.$on('test', function () {
-    console.log('child3 notified')
+  enfant3.$on('test', function () {
+    console.log('enfant3 notifié')
   })
 
   parent.$broadcast('test')
-  // -> "child1 notified"
-  // -> "child2 notified"
-  // child3 n'est pas notifié, parce que child2 n'a pas retourné
+  // -> "enfant1 notifié"
+  // -> "enfant2 notifié"
+  // enfant3 n'est pas notifié, parce que enfant2 n'a pas retourné
   // 'true' dans sa fonction de rappel
   ```
 
@@ -1363,14 +1362,14 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
     // ...
     methods: {
       // ...
-      example: function () {
+      exemple: function () {
         // changement de données
-        this.message = 'changed'
+        this.message = 'changé'
         // DOM n'est pas encore mis à jour
         this.$nextTick(function () {
           // DOM est maintenant mis à jour
           // `this` est lié à l'instance actuelle
-          this.doSomethingElse()
+          this.faisAutreChose()
         })
       }
     }
@@ -1402,7 +1401,7 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
   ``` js
   var MyComponent = Vue.extend({
-    template: '<div>Hello!</div>'
+    template: '<div>Bonjour !</div>'
   })
 
   // créer et attacher à #app (remplacera <div id="#app"></div>)
@@ -1456,7 +1455,7 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Détails:**
 
-  Met à jour le `innerHTML` de l'élément. Le contenu est inséré en tant que HTML brut - les liaisons de données sont ignorées. Si vous avez besoin de réutiliser des parties de modèle, vous devez utiliser [partials](#partial).
+  Met à jour le `innerHTML` de l'élément. Le contenu est inséré en tant que HTML brut - les liaisons de données sont ignorées. Si vous avez besoin de réutiliser des parties de modèle, vous devez utiliser les [partials](#partial).
 
   En interne, les interpolations `{% raw %}{{ Mustache }}{% endraw %}` sont aussi compilées comme une directive `v-html` utilisant des noeuds d'ancrage. La forme de la directive exige un élément d'enveloppement, mais offre des performances légèrement meilleures et évite FOUC (Flash of Uncompiled Content - Flashage du contenu non compilé).
 
@@ -1486,8 +1485,6 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
 - **Usage:**
 
-  Toggle's the element's `display` CSS property based on the truthy-ness of the expression value. Triggers transitions if present.
-
   Change la propriété CSS `display` de l'élément sur la base de la valeur d'expression `true` ou `false`. Déclenche les transitions si elles sont présentes.
 
 - **Voir aussi:** [Rendu condionnel - v-show](/guide/conditional.html#v-show)
@@ -1504,10 +1501,10 @@ Enregistre les données de l'instance actuelle comme un objet simple, cela est p
 
   ``` html
   <div v-if="Math.random() > 0.5">
-    Sorry
+    Désolé
   </div>
   <div v-else>
-    Not sorry
+    Pas désolé
   </div>
   ```
 
